@@ -1,0 +1,188 @@
+{
+  "menu": {
+    "inicio": "Home",
+    "sobreMi": "About Me",
+    "experiencia": "Experience",
+    "proyectos": "Academic Projects",
+    "proyectosPersonales": "Personal Projects",
+    "habilidades": "Skills",
+    "certificaciones": "Certifications",
+    "contacto": "Contact"
+  },
+  "cargar": "Loading...",
+  "frase1": "Compile your dreams, execute your goals.",
+  "frase2": "Code is poetry in motion.",
+  "frase3": "Every error is an opportunity to learn.",
+  "frase4": "Optimize your life like your software.",
+  "frase5": "Logic opens doors, passion crosses them.",
+  "frase6": "Debug your fears, program your success.",
+  "frase7": "In computer science, the limit is your imagination.",
+  "frase8": "Turn problems into algorithms.",
+  "frase9": "Update your knowledge every day.",
+  "frase10": "The best project is you.",
+  "idioma": "Language",
+  "espanol": "Spanish",
+  "ingles": "English",
+  "nombre": "José Galván",
+  "profesion": "Backend Developer & AI Engineer",
+  "hero": {
+    "valor": "4th year Computer Engineering student passionate about backend development, with internship experience and academic projects that demonstrate my ability to <span class=\"text-cyan-400 font-medium\"> learn quickly and solve complex problems</span>.",
+    "metricas": {
+      "curso": "Computer Engineering Year",
+      "mesesExperiencia": "Months of Internship Experience",
+      "proyectosDestacados": "Featured Projects"
+    },
+    "cta": {
+      "verProyectos": "See Projects",
+      "descargarCV": "Download CV"
+    },
+    "redes": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "mail": "Mail"
+    }
+  },
+  "sobreMi": {
+    "titulo": "About Me",
+    "descripcion1": "I am a Computer Engineering student at the University of Murcia, deeply passionate about large-scale backend development and artificial intelligence. My academic training is complemented by practical experience in real projects and a constant search for knowledge in the latest technologies.",
+    "descripcion2": "During my career, I have had the opportunity to work on various projects ranging from software development to intelligent systems and communication networks. This diversity of experiences has allowed me to acquire a comprehensive view of the field of computer science.",
+    "descripcion3": "Currently, I am focused on expanding my knowledge in cloud computing and artificial intelligence, areas I consider fundamental for the future of technology. My goal is to contribute to the development of innovative solutions that have a positive impact on society."
+  },
+  "experiencia": {
+    "titulo": "Professional Experience",
+    "descripcion": "My most relevant experience in software development",
+    "practicas": {
+      "titulo": "Internship in Software Development and Integration",
+      "empresa": "OdinS",
+      "periodo": "Jan 2025 – Jul 2025",
+      "descripcion": "Development and integration of payment module for PrestaShop using GNU Taler. Backend merchant setup, database and REST endpoints configuration. Full flow testing and technical documentation.",
+      "logros": "Achievements:",
+      "achievements": [
+        "Full payment system implementation",
+        "Technical documentation and explanatory video",
+        "GitLab repository management"
+      ]
+    },
+    "logros": "Achievements:"
+  },
+  "proyectos": {
+    "titulo": "Academic Projects",
+    "descripcion": "A selection of my most outstanding university projects, demonstrating my experience in software development, intelligent systems, and communication networks.",
+    "lista": {
+      "appchat": {
+        "titulo": "AppChat - Communication Platform",
+        "subtitulo": "Full-featured chat application with contact, message, and user profile management",
+        "institucion": "University of Murcia",
+        "periodo": "Oct 2024 - May 2025",
+        "nota": "9.5",
+        "reto": "Develop a robust chat application with advanced features and data persistence.",
+        "solucion": "I implemented a complete application using Java and Maven, with JPA for persistence, JUnit for testing, and external libraries for advanced features.",
+        "impacto": "Grade 9.5. Functional app with PDF report generation for premium users and efficient dependency management.",
+        "tecnologias": ["Java", "Maven", "JPA", "EclipseLink", "H2", "JUnit", "iText", "JFreeChart"]
+      },
+      "mitologia": {
+        "titulo": "Greek Mythology Intelligent System",
+        "subtitulo": "Intelligent system to answer complex questions about Greek mythology",
+        "institucion": "University of Murcia",
+        "periodo": "Sep 2024 - Nov 2024",
+        "nota": "9.75",
+        "reto": "Create a system integrating ontologies and rule engines to model complex mythological domains.",
+        "solucion": "We developed a team prototype using Protégé for ontologies and Drools as a rule engine, capable of evaluating mythological event sequences.",
+        "impacto": "Grade 9.75. System able to generate complex answers about mythological feats and decisions.",
+        "tecnologias": ["Protégé", "Drools", "Eclipse", "Ontologies", "Intelligent Systems", "SWRL"]
+      },
+      "nanofiles": {
+        "titulo": "NanoFiles - P2P System",
+        "subtitulo": "Distributed P2P system for sharing and transferring files between users",
+        "institucion": "University of Murcia",
+        "periodo": "Feb 2023 - May 2023",
+        "nota": "10.0",
+        "reto": "Implement a hybrid system combining a centralized server with direct P2P connections for efficient file transfer.",
+        "solucion": "We developed a Java system with a centralized server managing users and files, and direct P2P connections using TCP for secure transfers.",
+        "impacto": "Grade 10. Complete system with user registration, file publishing/downloading, and concurrent connection handling.",
+        "tecnologias": ["Java", "TCP", "UDP", "Sockets", "Concurrency", "Reliable Protocol", "P2P"]
+      }
+    }
+  },
+  "proyectosPersonales": {
+    "intro": "A selection of my most relevant personal projects, showcasing my skills in web development, backend, and cloud technologies. These projects reflect my passion for creating innovative solutions and my commitment to continuous learning.",
+    "lista": {
+      "portfolio": {
+        "titulo": "Personal Portfolio Website",
+        "subtitulo": "Personal website to showcase projects and skills",
+        "descripcion": "Development of my portfolio website using Next.js, TypeScript, and Tailwind CSS. Includes sections for projects, skills, experience, and contact form.",
+        "reto": "Create a modern and responsive website to showcase my professional profile.",
+        "solucion": "I used Next.js, TypeScript, and Tailwind for a fast and customizable experience.",
+        "impacto": "Professional online portfolio, improving my digital presence.",
+        "tecnologias": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+        "periodo": "2025",
+        "estado": "In development"
+      },
+      "gestorTareas": {
+        "titulo": "Task Manager",
+        "subtitulo": "Application for personal task organization",
+        "descripcion": "Web application to manage daily tasks with features for creating, editing, and deleting tasks. Includes category and priority system.",
+        "reto": "Facilitate personal task organization.",
+        "solucion": "I developed an app with React and Node.js, integrating MongoDB for persistence.",
+        "impacto": "Better time management and personal productivity.",
+        "tecnologias": ["React", "Node.js", "MongoDB", "Express"],
+        "periodo": "2024",
+        "estado": "Complete"
+      },
+      "elearning": {
+        "titulo": "E-Learning Platform",
+        "subtitulo": "Basic online course system",
+        "descripcion": "Simple educational platform where users can register, view courses, and complete lessons. Includes progress tracking and basic quizzes.",
+        "reto": "Offer an accessible educational platform.",
+        "solucion": "I implemented Vue.js and Node.js for the web, with Socket.io for real-time interaction.",
+        "impacto": "Facilitates online learning for users with no prior experience.",
+        "tecnologias": ["Vue.js", "Node.js", "MongoDB", "Socket.io"],
+        "periodo": "2023-2024",
+        "estado": "Paused"
+      }
+    },
+    "proyectosPersonalesLabels": {
+      "reto": "Challenge",
+      "solucion": "Solution",
+      "impacto": "Impact",
+      "tecnologias": "Technologies"
+    },
+    "proyectosPersonalesEstados": {
+      "completo": { "label": "Complete", "color": "green" },
+      "enDesarrollo": { "label": "In development", "color": "yellow" },
+      "enPausa": { "label": "Paused", "color": "blue" },
+      "concepto": { "label": "Concept", "color": "purple" }
+    }
+  },
+  "certificaciones": {
+    "titulo": "Certifications"
+  },
+  "habilidades": {
+    "titulo": "Technical Skills",
+    "intro": "Technologies and tools I work with",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Databases",
+    "cloud": "Cloud & DevOps",
+    "tools": "Tools",
+    "soft": "Soft Skills"
+  },
+  "contacto": {
+    "terminal": "$ ./contact.sh",
+    "secure": "establishing secure connection...",
+    "established": "$ connection established ✓",
+    "loading": "$ loading contact protocols...",
+    "loaded": "$ protocols loaded ✓",
+    "encryption": "$ initializing encryption...",
+    "encryptionActive": "$ encryption active ✓",
+    "placeholderNombre": "enter your name...",
+    "placeholderEmail": "enter your email@domain.com",
+    "placeholderMensaje": "type your message...",
+    "botonEnviar": "$ execute_message.sh",
+    "botonEnviando": "$ sending...",
+    "mail": "[mail]",
+    "git": "[git]",
+    "linkedin": "[in]",
+    "respuesta": "$ response_time: 12-24h | $ status: online"
+  }
+}

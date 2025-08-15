@@ -1,0 +1,191 @@
+{
+  "menu": {
+    "inicio": "Inicio",
+    "sobreMi": "Sobre Mí",
+    "experiencia": "Experiencia",
+    "proyectos": "Proyectos Académicos",
+    "proyectosPersonales": "Proyectos Personales",
+    "habilidades": "Habilidades",
+    "certificaciones": "Certificaciones",
+    "contacto": "Contacto"
+  },
+  "cargar": "Loading...",
+  "frase1": "Compile your dreams, execute your goals.",
+  "frase2": "Code is poetry in motion.",
+  "frase3": "Every error is an opportunity to learn.",
+  "frase4": "Optimize your life like your software.",
+  "frase5": "Logic opens doors, passion crosses them.",
+  "frase6": "Debug your fears, program your success.",
+  "frase7": "In computer science, the limit is your imagination.",
+  "frase8": "Turn problems into algorithms.",
+  "frase9": "Update your knowledge every day.",
+  "frase10": "The best project is you.",
+  "idioma": "Idioma",
+  "espanol": "Español",
+  "ingles": "Inglés",
+  "nombre": "José Galván",
+  "profesion": "Backend Developer & AI Engineer",
+  "hero": {
+    "valor": "Estudiante de 4º curso de Ingeniería Informática apasionado por el desarrollo backend, con experiencia en prácticas y proyectos académicos que demuestran mi capacidad para <span class=\"text-cyan-400 font-medium\"> aprender rápidamente y resolver problemas complejos</span>.",
+    "metricas": {
+      "curso": "Curso de Ingeniería Informática",
+      "mesesExperiencia": "Meses en prácticas",
+      "proyectosDestacados": "Proyectos Destacados"
+    },
+    "cta": {
+      "verProyectos": "Ver Proyectos",
+      "descargarCV": "Descargar CV"
+    },
+    "redes": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "mail": "Mail"
+    }
+  },
+  "sobreMi": {
+    "titulo": "Sobre Mí",
+    "descripcion1": "Soy estudiante de Ingeniería Informática en la Universidad de Murcia, con una pasión profunda por el desarrollo backend a gran escala y la inteligencia artificial. Mi formación académica se complementa con experiencia práctica en proyectos reales y una constante búsqueda de conocimiento en las últimas tecnologías.",
+    "descripcion2": "Durante mi carrera, he tenido la oportunidad de trabajar en diversos proyectos que abarcan desde el desarrollo de software hasta sistemas inteligentes y redes de comunicaciones. Esta diversidad de experiencias me ha permitido adquirir una visión integral del campo de la informática.",
+    "descripcion3": "Actualmente, estoy enfocado en expandir mis conocimientos en cloud computing e inteligencia artificial, áreas que considero fundamentales para el futuro de la tecnología. Mi objetivo es contribuir al desarrollo de soluciones innovadoras que tengan un impacto positivo en la sociedad."
+  },
+  "experiencia": {
+    "titulo": "Experiencia Profesional",
+    "descripcion": "Mi experiencia más relevante en el campo del desarrollo de software",
+    "practicas": {
+      "titulo": "Prácticas en Desarrollo e Integración de Software",
+      "empresa": "OdinS",
+      "periodo": "Ene 2025 – Jul 2025",
+      "descripcion": "Desarrollo e integración de módulo de pago para PrestaShop usando GNU Taler. Configuración de backend merchant, base de datos y endpoints REST. Implementación de pruebas de flujo completo y documentación técnica.",
+      "logros": "Logros:",
+      "achievements": [
+        "Implementación completa de sistema de pago",
+        "Documentación técnica y video explicativo",
+        "Gestión de repositorio GitLab"
+      ]
+    },
+    "logros": "Logros:"
+  },
+  "proyectos": {
+    "titulo": "Proyectos Académicos",
+    "descripcion": "Una selección de mis proyectos universitarios más destacados, demostrando mi experiencia en desarrollo de software, sistemas inteligentes y redes de comunicaciones.",
+    "lista": {
+      "appchat": {
+        "titulo": "AppChat - Plataforma de Comunicación",
+        "subtitulo": "Aplicación de chat completa con gestión de contactos, mensajes y perfiles de usuario",
+        "institucion": "Universidad de Murcia",
+        "periodo": "oct. 2024 - may. 2025",
+        "nota": "9.5",
+        "reto": "Desarrollar una aplicación de chat robusta con funcionalidades avanzadas y persistencia de datos.",
+        "solucion": "Implementé una aplicación completa utilizando Java y Maven, con JPA para persistencia, JUnit para pruebas y librerías externas para funcionalidades avanzadas.",
+        "impacto": "Aplicación funcional con generación de reportes PDF para usuarios premium y manejo eficiente de dependencias.",
+        "tecnologias": ["Java", "Maven", "JPA", "EclipseLink", "H2", "JUnit", "iText", "JFreeChart"]
+      },
+      "mitologia": {
+        "titulo": "Sistema Inteligente de Mitología Griega",
+        "subtitulo": "Sistema inteligente para responder preguntas complejas sobre mitología griega",
+        "institucion": "Universidad de Murcia",
+        "periodo": "sept. 2024 - nov. 2024",
+        "nota": "9.75",
+        "reto": "Crear un sistema que integre ontologías y motores de reglas para modelar dominios mitológicos complejos.",
+        "solucion": "Desarrollamos un prototipo en equipo utilizando Protégé para ontologías y Drools como motor de reglas, capaz de evaluar secuencias de eventos mitológicos.",
+        "impacto": "Sistema capaz de generar respuestas complejas sobre hazañas y decisiones mitológicas.",
+        "tecnologias": ["Protégé", "Drools", "Eclipse", "Ontologías", "Sistemas Inteligentes", "SWRL"]
+      },
+      "nanofiles": {
+        "titulo": "NanoFiles - Sistema P2P",
+        "subtitulo": "Sistema distribuido P2P para compartir y transferir archivos entre usuarios",
+        "institucion": "Universidad de Murcia",
+        "periodo": "feb. 2023 - may. 2023",
+        "nota": "10.0",
+        "reto": "Implementar un sistema híbrido que combine servidor centralizado con conexiones P2P directas para transferencia eficiente de archivos.",
+        "solucion": "Desarrollamos un sistema en Java con servidor centralizado que gestiona usuarios y archivos, y conexiones P2P directas usando TCP para transferencias seguras.",
+        "impacto": "Sistema completo con registro de usuarios, publicación/descarga de archivos y manejo concurrente de conexiones.",
+        "tecnologias": ["Java", "TCP", "UDP", "Sockets", "Concurrencia", "Protocolo fiable", "P2P"]
+      }
+    }
+  },
+  "proyectosPersonales": {
+    "intro": "Una selección de mis proyectos personales más relevantes, donde demuestro habilidades en desarrollo web, backend y tecnologías cloud. Estos proyectos reflejan mi pasión por crear soluciones innovadoras y mi compromiso con el aprendizaje continuo.",
+    "lista": {
+      "portfolio": {
+        "titulo": "Portfolio Web Personal",
+        "subtitulo": "Sitio web personal para mostrar proyectos y habilidades",
+        "descripcion": "Desarrollo de mi portfolio web utilizando Next.js, TypeScript y Tailwind CSS. Incluye secciones de proyectos, habilidades, experiencia y formulario de contacto.",
+        "reto": "Crear una web moderna y responsiva para mostrar mi perfil profesional.",
+        "solucion": "Utilicé Next.js, TypeScript y Tailwind para una experiencia rápida y personalizable.",
+        "impacto": "Portfolio profesional online, mejorando mi presencia digital.",
+        "tecnologias": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+        "periodo": "2025",
+        "estado": "enDesarrollo"
+      },
+      "gestorTareas": {
+        "titulo": "Gestor de Tareas",
+        "subtitulo": "Aplicación para organización de tareas personales",
+        "descripcion": "Aplicación web para gestionar tareas diarias con funcionalidades de creación, edición y eliminación de tareas. Incluye sistema de categorías y prioridades.",
+        "reto": "Facilitar la organización personal de tareas.",
+        "solucion": "Desarrollé una app con React y Node.js, integrando MongoDB para persistencia.",
+        "impacto": "Mejor gestión del tiempo y productividad personal.",
+        "tecnologias": ["React", "Node.js", "MongoDB", "Express"],
+        "periodo": "2024",
+        "estado": "completo"
+      },
+      "elearning": {
+        "titulo": "Plataforma E-Learning",
+        "subtitulo": "Sistema básico de cursos online",
+        "descripcion": "Plataforma educativa simple donde los usuarios pueden registrarse, ver cursos y completar lecciones. Incluye sistema de progreso y quizzes básicos.",
+        "reto": "Ofrecer una plataforma educativa accesible.",
+        "solucion": "Implementé Vue.js y Node.js para la web, con Socket.io para interacción en tiempo real.",
+        "impacto": "Facilita el aprendizaje online para usuarios sin experiencia previa.",
+        "tecnologias": ["Vue.js", "Node.js", "MongoDB", "Socket.io"],
+        "periodo": "2023-2024",
+        "estado": "enPausa"
+      }
+    }
+  },
+  "proyectosPersonalesEstados": {
+    "completo": { "label": "Completo", "color": "green" },
+    "enDesarrollo": { "label": "En desarrollo", "color": "yellow" },
+    "enPausa": { "label": "En pausa", "color": "blue" },
+    "concepto": { "label": "Concepto", "color": "purple" }
+  },
+  "certificaciones": {
+    "titulo": "Certificaciones"
+  },
+  "habilidades": {
+    "titulo": "Habilidades Técnicas",
+    "intro": "Tecnologías y herramientas con las que trabajo",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Bases de Datos",
+    "cloud": "Cloud & DevOps",
+    "tools": "Herramientas",
+    "soft": "Soft Skills"
+  },
+  "contacto": {
+    "terminal": "$ ./contact.sh",
+    "secure": "establishing secure connection...",
+    "established": "$ connection established ✓",
+    "loading": "$ loading contact protocols...",
+    "loaded": "$ protocols loaded ✓",
+    "encryption": "$ initializing encryption...",
+    "encryptionActive": "$ encryption active ✓",
+    "placeholderNombre": "enter your name...",
+    "placeholderEmail": "enter your email@domain.com",
+    "placeholderMensaje": "type your message...",
+    "botonEnviar": "$ execute_message.sh",
+    "botonEnviando": "$ sending...",
+    "mail": "[mail]",
+    "git": "[git]",
+    "linkedin": "[in]",
+    "respuesta": "$ response_time: 12-24h | $ status: online"
+  },
+  "footer": {
+    "derechos": "Todos los derechos reservados."
+  },
+  "proyectosPersonalesLabels": {
+    "reto": "Reto",
+    "solucion": "Solución",
+    "impacto": "Impacto",
+    "tecnologias": "Tecnologías"
+  }
+}

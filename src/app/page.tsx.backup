@@ -1,0 +1,522 @@
+'use client';
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Calendar, Users, Award } from "lucide-react";
+import AnimatedBackground from "@/components/animated-background";
+import WaveEffect from "@/components/wave-effect";
+import AnimatedCard from "@/components/animated-card";
+import SimpleLoading from "@/components/simple-loading";
+
+export default function Portfolio() {
+  const projects = [
+    {
+      title: "Tecnologías Desarrollo Software - AppChat",
+      description: "Aplicación de chat completa con gestión de contactos, mensajes y perfiles de usuario.",
+      challenge: "Desarrollar una aplicación de chat robusta con funcionalidades avanzadas y persistencia de datos.",
+      solution: "Implementé una aplicación completa utilizando Java y Maven, con JPA para persistencia, JUnit para pruebas y librerías externas para funcionalidades avanzadas.",
+      technologies: ["Java", "Maven", "JPA", "EclipseLink", "H2", "JUnit", "iText", "JFreeChart"],
+      impact: "Nota 9.5. Aplicación funcional con generación de reportes PDF para usuarios premium y manejo eficiente de dependencias.",
+      links: {
+        github: "https://github.com/PepeGdlT/TDS-AppChat",
+        demo: null
+      },
+      image: "/project1.jpg",
+      period: "oct. 2024 - may. 2025",
+      institution: "Universidad de Murcia",
+      grade: "9.5"
+    },
+    {
+      title: "Desarrollo de Sistemas Inteligentes - Mitología Griega",
+      description: "Sistema inteligente para responder preguntas complejas sobre mitología griega.",
+      challenge: "Crear un sistema que integre ontologías y motores de reglas para modelar dominios mitológicos complejos.",
+      solution: "Desarrollamos un prototipo en equipo utilizando Protégé para ontologías y Drools como motor de reglas, capaz de evaluar secuencias de eventos mitológicos.",
+      technologies: ["Protégé", "Drools", "Eclipse", "Ontologías", "Sistemas Inteligentes", "SWRL"],
+      impact: "Nota 9.75. Sistema capaz de generar respuestas complejas sobre hazañas y decisiones mitológicas.",
+      links: {
+        github: "https://github.com/PepeGdlT/DSINT",
+        demo: null
+      },
+      image: "/project2.jpg",
+      period: "sept. 2024 - nov. 2024",
+      institution: "Universidad de Murcia",
+      grade: "9.75"
+    },
+    {
+      title: "Redes de Comunicaciones - NanoFiles",
+      description: "Sistema distribuido P2P para compartir y transferir archivos entre usuarios.",
+      challenge: "Implementar un sistema híbrido que combine servidor centralizado con conexiones P2P directas para transferencia eficiente de archivos.",
+      solution: "Desarrollamos un sistema en Java con servidor centralizado que gestiona usuarios y archivos, y conexiones P2P directas usando TCP para transferencias seguras.",
+      technologies: ["Java", "TCP", "UDP", "Sockets", "Concurrencia", "Protocolo fiable", "P2P"],
+      impact: "Nota 10. Sistema completo con registro de usuarios, publicación/descarga de archivos y manejo concurrente de conexiones.",
+      links: {
+        github: "https://github.com/PepeGdlT/ProyectoRC",
+        demo: null
+      },
+      image: "/project3.jpg",
+      period: "feb. 2023 - may. 2023",
+      institution: "Universidad de Murcia",
+      grade: "10.0"
+    }
+  ];
+
+  const certifications = [
+    {
+      name: "Infrastructure in Google Cloud",
+      issuer: "Google Cloud Skill Boost",
+      date: "Jul 2025",
+      icon: "☁️"
+    },
+    {
+      name: "Cloud Computing Fundamentals",
+      issuer: "Google Cloud Skill Boost",
+      date: "Jul 2025",
+      icon: "☁️"
+    },
+    {
+      name: "Networking & Security in Google Cloud",
+      issuer: "Google Cloud Skill Boost",
+      date: "Jul 2025",
+      icon: "☁️"
+    },
+    {
+      name: "AWS Cloud Practitioner Essentials",
+      issuer: "AWS",
+      date: "Jul 2025",
+      icon: "🔶"
+    }
+  ];
+
+  const experiences = [
+    {
+      title: "Prácticas en Desarrollo e Integración de Software",
+      company: "OdinS",
+      period: "Ene 2025 – Jul 2025",
+      description: "Desarrollo e integración de módulo de pago para PrestaShop usando GNU Taler. Configuración de backend merchant, base de datos y endpoints REST. Implementación de pruebas de flujo completo y documentación técnica.",
+      achievements: ["Implementación completa de sistema de pago", "Documentación técnica y video explicativo", "Gestión de repositorio GitLab"]
+    },
+    {
+      title: "Camarero",
+      company: "Gran Bar",
+      period: "Jun 2023 – Ago 2023",
+      description: "Atención al cliente, gestión de pedidos y pagos, organización de áreas de trabajo.",
+      achievements: ["Mejora en satisfacción del cliente", "Optimización de procesos de servicio"]
+    },
+    {
+      title: "Cajero",
+      company: "Alsara",
+      period: "Jul 2022 – Ago 2022",
+      description: "Reposición de productos y control de inventario.",
+      achievements: ["Gestión eficiente de inventario", "Precisión en control de stock"]
+    }
+  ];
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      <SimpleLoading />
+      <div className="min-h-screen relative overflow-hidden">
+      {/* Efectos de fondo - cubren toda la página */}
+      <div className="fixed inset-0 z-0">
+        <AnimatedBackground />
+        <WaveEffect />
+      </div>
+      
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <section className="min-h-screen flex items-center justify-center px-4 relative">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
+                José Galván de la Torre
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
+                Backend Developer & AI Engineer
+              </p>
+              <p className="text-lg text-gray-200 max-w-3xl mx-auto leading-relaxed bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-purple-500/30 shadow-2xl">
+                Estudiante de Ingeniería Informática apasionado por el desarrollo backend a gran escala 
+                y la inteligencia artificial. Construyendo soluciones innovadoras con tecnologías 
+                de vanguardia y experiencia internacional.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+              <Button 
+                size="lg" 
+                onClick={() => scrollToSection('proyectos')}
+                className="text-lg px-8 py-6 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-2 border-cyan-400/50 shadow-lg hover:shadow-cyan-500/25 transform hover:scale-105 transition-all duration-300"
+              >
+                Ver Proyectos
+                <ChevronDown className="ml-2 h-5 w-5 animate-bounce" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                onClick={() => scrollToSection('contacto')}
+                className="text-lg px-8 py-6 bg-transparent border-2 border-purple-400 text-purple-200 hover:bg-purple-600 hover:text-white hover:border-purple-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300"
+              >
+                Contactar
+              </Button>
+            </div>
+
+            {/* Avatar - ahora muestra la foto por defecto */}
+            <div className="flex justify-center space-x-6 pt-8">
+              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-cyan-400/50 mb-8 shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-110 relative">
+                {/* Foto por defecto */}
+                <img
+                  src="/avatar.jpg"
+                  alt="José Galván de la Torre"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                {/* JG que aparece al hacer hover */}
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-4xl font-bold text-white">JG</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Iconos de redes sociales */}
+            <div className="flex justify-center space-x-6 pt-8">
+              <a
+                href="https://github.com/PepeGdlT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-300 hover:text-white hover:scale-110 transition-all duration-300 p-2 rounded-full hover:bg-cyan-500/20"
+              >
+                <Github className="h-8 w-8" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/jose-galvan-de-la-torre/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-300 hover:text-white hover:scale-110 transition-all duration-300 p-2 rounded-full hover:bg-purple-500/20"
+              >
+                <Linkedin className="h-8 w-8" />
+              </a>
+              <a
+                href="mailto:pepegdlt02@gmail.com"
+                className="text-pink-300 hover:text-white hover:scale-110 transition-all duration-300 p-2 rounded-full hover:bg-pink-500/20"
+              >
+                <Mail className="h-8 w-8" />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Proyectos Section */}
+        <section id="proyectos" className="py-20 px-4 relative">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                Proyectos Académicos
+              </h2>
+              <p className="text-lg text-blue-200 max-w-2xl mx-auto bg-black/20 backdrop-blur-sm p-4 rounded-lg">
+                Una selección de mis proyectos universitarios más destacados, demostrando mi experiencia en 
+                desarrollo de software, sistemas inteligentes y redes de comunicaciones.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:gap-12">
+              {projects.map((project, index) => (
+                <AnimatedCard key={index} className="bg-black/30 backdrop-blur-sm border border-blue-500/30">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                      <div className="aspect-video bg-black/50 rounded-lg overflow-hidden border border-blue-500/30 relative">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="flex items-center justify-between text-sm text-blue-200">
+                        <div className="flex items-center space-x-2">
+                          <Calendar className="h-4 w-4" />
+                          <span>{project.period}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Award className="h-4 w-4" />
+                          <span>Nota: {project.grade}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-4">
+                      <div>
+                        <CardTitle className="text-2xl mb-2 text-white">{project.title}</CardTitle>
+                        <CardDescription className="text-base text-blue-200">{project.description}</CardDescription>
+                        <div className="flex items-center space-x-2 mt-2">
+                          <Users className="h-4 w-4 text-blue-400" />
+                          <span className="text-sm text-blue-300">{project.institution}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <div>
+                          <h4 className="font-semibold text-sm text-blue-300 mb-1">Reto</h4>
+                          <p className="text-sm text-blue-100">{project.challenge}</p>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-sm text-blue-300 mb-1">Solución</h4>
+                          <p className="text-sm text-blue-100">{project.solution}</p>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-sm text-blue-300 mb-1">Impacto</h4>
+                          <p className="text-sm text-blue-100">{project.impact}</p>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-sm text-blue-300">Tecnologías</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map((tech, techIndex) => (
+                            <Badge key={techIndex} variant="secondary" className="bg-blue-600/20 text-blue-200 border border-blue-500/30">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex space-x-4">
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center space-x-2 text-sm text-blue-300 hover:text-white transition-colors"
+                        >
+                          <Github className="h-4 w-4" />
+                          <span>Código</span>
+                        </a>
+                        {project.links.demo && (
+                          <a
+                            href={project.links.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center space-x-2 text-sm text-blue-300 hover:text-white transition-colors"
+                          >
+                            <ExternalLink className="h-4 w-4" />
+                            <span>Demo</span>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </AnimatedCard>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Sobre Mí Section */}
+        <section id="sobre-mi" className="py-20 px-4 relative">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                Sobre Mí
+              </h2>
+            </div>
+
+            <AnimatedCard className="bg-black/30 backdrop-blur-sm border border-purple-500/30">
+              <div className="p-8">
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-lg leading-relaxed mb-6 text-purple-100">
+                    Soy estudiante de Ingeniería Informática en la Universidad de Murcia, con una pasión profunda 
+                    por el desarrollo backend a gran escala y la inteligencia artificial. Mi viaje en la tecnología 
+                    comenzó con una curiosidad innata por entender cómo funcionan los sistemas complejos, y desde 
+                    entonces he dedicado mi carrera a construir soluciones robustas y escalables.
+                  </p>
+                  
+                  <p className="text-lg leading-relaxed mb-6 text-purple-100">
+                    Mi experiencia internacional y mi nivel avanzado de inglés (Cambridge B2 Score 178) me han 
+                    permitido colaborar con equipos diversos y adaptarme a diferentes entornos de trabajo. Durante 
+                    mis prácticas en OdinS, tuve la oportunidad de trabajar en un proyecto real de integración de 
+                    pagos, donde aplicé mis conocimientos técnicos para desarrollar una solución completa desde 
+                    cero.
+                  </p>
+                  
+                  <p className="text-lg leading-relaxed mb-6 text-purple-100">
+                    Me especializo en crear arquitecturas de software eficientes, APIs RESTful robustas y en la 
+                    aplicación de inteligencia artificial para resolver problemas complejos. Mi objetivo es crecer 
+                    como programador versátil, dominando diversas tecnologías y contribuyendo a proyectos innovadores 
+                    que tengan un impacto real en la sociedad.
+                  </p>
+                  
+                  <div className="grid md:grid-cols-3 gap-6 mt-8">
+                    <div className="text-center p-4 bg-purple-600/20 rounded-lg border border-purple-500/30">
+                      <h3 className="font-semibold text-lg mb-2 text-white">Educación</h3>
+                      <p className="text-sm text-purple-200">
+                        Grado en Ingeniería Informática<br />
+                        Universidad de Murcia (2022 - actualidad)
+                      </p>
+                    </div>
+                    <div className="text-center p-4 bg-purple-600/20 rounded-lg border border-purple-500/30">
+                      <h3 className="font-semibold text-lg mb-2 text-white">Idiomas</h3>
+                      <p className="text-sm text-purple-200">
+                        Español (Nativo)<br />
+                        Inglés (Cambridge B2 - 178)
+                      </p>
+                    </div>
+                    <div className="text-center p-4 bg-purple-600/20 rounded-lg border border-purple-500/30">
+                      <h3 className="font-semibold text-lg mb-2 text-white">Intereses</h3>
+                      <p className="text-sm text-purple-200">
+                        Backend Development<br />
+                        AI & Machine Learning<br />
+                        Cloud Computing
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedCard>
+          </div>
+        </section>
+
+        {/* Experiencia Section */}
+        <section id="experiencia" className="py-20 px-4 relative">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                Experiencia Profesional
+              </h2>
+            </div>
+
+            <div className="space-y-8">
+              {experiences.map((exp, index) => (
+                <AnimatedCard key={index} className="bg-black/30 backdrop-blur-sm border border-pink-500/30">
+                  <div className="p-6">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                      <div>
+                        <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
+                        <p className="text-pink-300">{exp.company}</p>
+                      </div>
+                      <p className="text-pink-200 text-sm mt-2 md:mt-0">{exp.period}</p>
+                    </div>
+                    <p className="text-pink-100 mb-4">{exp.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.achievements.map((achievement, achIndex) => (
+                        <Badge key={achIndex} variant="secondary" className="bg-pink-600/20 text-pink-200 border border-pink-500/30">
+                          {achievement}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </AnimatedCard>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Certificaciones Section */}
+        <section id="certificaciones" className="py-20 px-4 relative">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                Certificaciones
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {certifications.map((cert, index) => (
+                <AnimatedCard key={index} className="bg-black/30 backdrop-blur-sm border border-indigo-500/30">
+                  <div className="p-6 text-center">
+                    <div className="text-4xl mb-4">{cert.icon}</div>
+                    <h3 className="font-semibold text-white mb-2">{cert.name}</h3>
+                    <p className="text-indigo-300">{cert.issuer}</p>
+                    <p className="text-indigo-200 text-sm mt-2">{cert.date}</p>
+                  </div>
+                </AnimatedCard>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contacto Section */}
+        <section id="contacto" className="py-20 px-4 relative">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                Contacto
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <AnimatedCard className="bg-black/30 backdrop-blur-sm border border-blue-500/30">
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-4 text-white">Información de Contacto</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <Mail className="h-5 w-5 text-blue-400" />
+                      <span className="text-blue-200">pepegdlt02@gmail.com</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Github className="h-5 w-5 text-blue-400" />
+                      <a href="https://github.com/PepeGdlT" target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-white transition-colors">
+                        github.com/PepeGdlT
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Linkedin className="h-5 w-5 text-blue-400" />
+                      <a href="https://www.linkedin.com/in/jose-galvan-de-la-torre/" target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-white transition-colors">
+                        linkedin.com/in/jose-galvan-de-la-torre
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedCard>
+
+              <AnimatedCard className="bg-black/30 backdrop-blur-sm border border-blue-500/30">
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-4 text-white">Envíame un mensaje</h3>
+                  <form className="space-y-4">
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="Tu nombre"
+                        className="w-full px-4 py-2 bg-blue-900/20 border border-blue-500/30 rounded-lg text-white placeholder-blue-400 focus:outline-none focus:border-blue-400"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="email"
+                        placeholder="Tu email"
+                        className="w-full px-4 py-2 bg-blue-900/20 border border-blue-500/30 rounded-lg text-white placeholder-blue-400 focus:outline-none focus:border-blue-400"
+                      />
+                    </div>
+                    <div>
+                      <textarea
+                        placeholder="Tu mensaje"
+                        rows={4}
+                        className="w-full px-4 py-2 bg-blue-900/20 border border-blue-500/30 rounded-lg text-white placeholder-blue-400 focus:outline-none focus:border-blue-400 resize-none"
+                      ></textarea>
+                    </div>
+                    <Button 
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white border-2 border-blue-400/50"
+                    >
+                      Enviar Mensaje
+                    </Button>
+                  </form>
+                </div>
+              </AnimatedCard>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="py-8 px-4 border-t border-blue-500/30 bg-black/20 backdrop-blur-sm relative">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-sm text-blue-200">
+              © {new Date().getFullYear()} José Galván de la Torre. Todos los derechos reservados.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </>
+  );
+}
