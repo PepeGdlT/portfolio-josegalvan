@@ -9,12 +9,21 @@ const resources = {
   en: { translation: enTranslation },
 };
 
+const getDefaultLanguage = () => {
+  // aquí intento pillar el idioma del navegador, si es español lo pongo
+  if (typeof window !== 'undefined' && window.navigator) {
+    const lang = window.navigator.language || (window.navigator.languages && window.navigator.languages[0]);
+    if (lang && lang.toLowerCase().startsWith('es')) return 'es';
+  }
+  return 'en';
+};
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'es', // idioma por defecto
-    fallbackLng: 'es',
+    lng: getDefaultLanguage(), // idioma por defecto detectado (lo pillo del navegador)
+    fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
     },

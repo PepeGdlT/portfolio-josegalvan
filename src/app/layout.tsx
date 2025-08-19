@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import I18nProvider from "@/components/I18nProvider";
 import LanguageSwitcher from "@/components/language-switcher";
+import { ThemeProvider } from 'next-themes';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,19 +40,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Detectar si estamos en pantalla de carga
-  // Se asume que la pantalla de carga se controla por una clase en el body o por un estado global
-  // Aquí lo más robusto es que el componente de loading no renderice el botón
+  // aquí detecto si estamos en pantalla de carga
+  // asumo que la pantalla de carga se controla por una clase en el body o por un estado global
+  // lo más fácil es que el componente de loading no renderice el botón
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         <I18nProvider>
-          {/* El botón de idioma siempre visible, excepto en loading */}
-          <LanguageSwitcher />
-          {children}
-          <Toaster />
+          {/* el botón de idioma siempre está visible, menos cuando está cargando */}
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <LanguageSwitcher />
+            {children}
+            <Toaster/>
+          </ThemeProvider>
         </I18nProvider>
       </body>
     </html>

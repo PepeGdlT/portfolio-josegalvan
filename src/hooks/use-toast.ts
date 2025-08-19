@@ -1,6 +1,6 @@
 "use client"
 
-// Inspired by react-hot-toast library
+// este hook está inspirado en la librería react-hot-toast
 import * as React from "react"
 
 import type {
@@ -18,7 +18,7 @@ type ToasterToast = ToastProps & {
   action?: ToastActionElement
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// aquí ignoro el warning de eslint porque no lo uso
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
   UPDATE_TOAST: "UPDATE_TOAST",
@@ -94,8 +94,7 @@ export const reducer = (state: State, action: Action): State => {
     case "DISMISS_TOAST": {
       const { toastId } = action
 
-      // ! Side effects ! - This could be extracted into a dismissToast() action,
-      // but I'll keep it here for simplicity
+      // aquí hago efectos secundarios, podría sacarlo a una función aparte pero lo dejo aquí por simple
       if (toastId) {
         addToRemoveQueue(toastId)
       } else {

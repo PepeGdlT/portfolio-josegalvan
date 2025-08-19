@@ -5,7 +5,6 @@
     "experiencia": "Experience",
     "proyectos": "Academic Projects",
     "proyectosPersonales": "Personal Projects",
-    "habilidades": "Skills",
     "certificaciones": "Certifications",
     "contacto": "Contact"
   },
@@ -105,40 +104,29 @@
     }
   },
   "proyectosPersonales": {
-    "intro": "A selection of my most relevant personal projects, showcasing my skills in web development, backend, and cloud technologies. These projects reflect my passion for creating innovative solutions and my commitment to continuous learning.",
+    "intro": "A selection of my most relevant personal projects, showcasing my experience in web development, backend, and cloud technologies. These projects reflect my passion for creating innovative solutions and my commitment to continuous learning.",
     "lista": {
       "portfolio": {
         "titulo": "Personal Portfolio Website",
-        "subtitulo": "Personal website to showcase projects and skills",
-        "descripcion": "Development of my portfolio website using Next.js, TypeScript, and Tailwind CSS. Includes sections for projects, skills, experience, and contact form.",
+        "subtitulo": "Personal website to showcase projects",
+        "descripcion": "Development of my portfolio website using Next.js, TypeScript, and Tailwind CSS. Includes sections for projects, experience, and contact form.",
         "reto": "Create a modern and responsive website to showcase my professional profile.",
         "solucion": "I used Next.js, TypeScript, and Tailwind for a fast and customizable experience.",
         "impacto": "Professional online portfolio, improving my digital presence.",
         "tecnologias": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
         "periodo": "2025",
-        "estado": "In development"
+        "estado": "completo"
       },
-      "gestorTareas": {
-        "titulo": "Task Manager",
-        "subtitulo": "Application for personal task organization",
-        "descripcion": "Web application to manage daily tasks with features for creating, editing, and deleting tasks. Includes category and priority system.",
-        "reto": "Facilitate personal task organization.",
-        "solucion": "I developed an app with React and Node.js, integrating MongoDB for persistence.",
-        "impacto": "Better time management and personal productivity.",
-        "tecnologias": ["React", "Node.js", "MongoDB", "Express"],
-        "periodo": "2024",
-        "estado": "Complete"
-      },
-      "elearning": {
-        "titulo": "E-Learning Platform",
-        "subtitulo": "Basic online course system",
-        "descripcion": "Simple educational platform where users can register, view courses, and complete lessons. Includes progress tracking and basic quizzes.",
-        "reto": "Offer an accessible educational platform.",
-        "solucion": "I implemented Vue.js and Node.js for the web, with Socket.io for real-time interaction.",
-        "impacto": "Facilitates online learning for users with no prior experience.",
-        "tecnologias": ["Vue.js", "Node.js", "MongoDB", "Socket.io"],
-        "periodo": "2023-2024",
-        "estado": "Paused"
+      "tennisPredictor": {
+        "titulo": "Tennis Match Predictor",
+        "subtitulo": "Advanced prediction of professional tennis matches",
+        "descripcion": "Professional tennis match prediction using machine learning.",
+        "reto": "Build an accurate model and analyze key victory factors.",
+        "solucion": "Data pipeline, feature engineering, and advanced models.",
+        "impacto": "Reliable predictions for sports analysis and betting.",
+        "tecnologias": ["Python", "pandas", "scikit-learn", "XGBoost", "matplotlib", "seaborn"],
+        "periodo": "2025",
+        "estado": "enDesarrollo"
       }
     },
     "proyectosPersonalesLabels": {
@@ -147,25 +135,10 @@
       "impacto": "Impact",
       "tecnologias": "Technologies"
     },
-    "proyectosPersonalesEstados": {
-      "completo": { "label": "Complete", "color": "green" },
-      "enDesarrollo": { "label": "In development", "color": "yellow" },
-      "enPausa": { "label": "Paused", "color": "blue" },
-      "concepto": { "label": "Concept", "color": "purple" }
-    }
+    "nota": "Grade"
   },
   "certificaciones": {
     "titulo": "Certifications"
-  },
-  "habilidades": {
-    "titulo": "Technical Skills",
-    "intro": "Technologies and tools I work with",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "database": "Databases",
-    "cloud": "Cloud & DevOps",
-    "tools": "Tools",
-    "soft": "Soft Skills"
   },
   "contacto": {
     "terminal": "$ ./contact.sh",
@@ -183,6 +156,8 @@
     "mail": "[mail]",
     "git": "[git]",
     "linkedin": "[in]",
-    "respuesta": "$ response_time: 12-24h | $ status: online"
+    "respuesta": "$ response_time: 12-24h | $ status: online",
+    "response_time": "Response time: 12-24h",
+    "status_online": "Status: online"
   }
 }

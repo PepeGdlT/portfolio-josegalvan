@@ -11,12 +11,16 @@ import AnimatedCard from "@/components/animated-card";
 import SimpleLoading from "@/components/simple-loading";
 import NavigationMenu from "@/components/navigation-menu";
 import SectionTransition from "@/components/section-transition";
-import TechIcon from "@/components/tech-icons";
 import dynamic from 'next/dynamic';
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from 'react-i18next';
+import ScrollAnimator from "@/components/scroll-animator";
+import Image from 'next/image';
+import MagneticButton from '@/components/magnetic-button';
+import AnimatedHeading from '@/components/animated-heading';
+import AnimatedText from '@/components/animated-text';
 
-// Estilos personalizados para las animaciones del sistema solar y terminal
+// estilos personalizados para las animaciones del sistema solar y terminal
 const customStyles = `
   @keyframes spin-slow {
     from { transform: translate(-50%, -50%) rotate(0deg); }
@@ -94,7 +98,7 @@ function MatrixRainEffectInner({ count = 40 }: { count?: number }) {
 }
 
 export default function Portfolio() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   // Estado de carga para controlar la pantalla de loading
   const [isLoading, setIsLoading] = useState(true);
   // Estado para el blur bajo el menú
@@ -153,7 +157,6 @@ export default function Portfolio() {
     { id: 'experiencia', label: t('menu.experiencia') },
     { id: 'proyectos', label: t('menu.proyectos') },
     { id: 'proyectos-personales', label: t('menu.proyectosPersonales') },
-    { id: 'habilidades', label: t('menu.habilidades') },
     { id: 'certificaciones', label: t('menu.certificaciones') },
     { id: 'contacto', label: t('menu.contacto') }
   ];
@@ -210,8 +213,23 @@ export default function Portfolio() {
     }
   ];
 
-  // Proyectos personales usando traducción
-  const personalProjects = [
+  type PersonalProject = {
+    title: string;
+    subtitle: string;
+    description: string;
+    challenge: string;
+    solution: string;
+    impact: string;
+    technologies: any;
+    links: { github: string; demo: null | string };
+    image: string;
+    period: string;
+    estado: string;
+    grade?: string;
+  };
+
+
+    const personalProjects: PersonalProject[] = [
     {
       title: t('proyectosPersonales.lista.portfolio.titulo'),
       subtitle: t('proyectosPersonales.lista.portfolio.subtitulo'),
@@ -221,44 +239,30 @@ export default function Portfolio() {
       impact: t('proyectosPersonales.lista.portfolio.impacto'),
       technologies: t('proyectosPersonales.lista.portfolio.tecnologias', { returnObjects: true }),
       links: {
-        github: "https://github.com/PepeGdlT/portfolio",
+        github: "",
         demo: null
       },
-      image: "/portfolio-project.jpg",
+      image: "/project4.jpg",
       period: t('proyectosPersonales.lista.portfolio.periodo'),
-      estado: "enDesarrollo"
+      estado: t('proyectosPersonales.lista.portfolio.estado'),
+      grade: undefined
     },
     {
-      title: t('proyectosPersonales.lista.gestorTareas.titulo'),
-      subtitle: t('proyectosPersonales.lista.gestorTareas.subtitulo'),
-      description: t('proyectosPersonales.lista.gestorTareas.descripcion'),
-      challenge: t('proyectosPersonales.lista.gestorTareas.reto'),
-      solution: t('proyectosPersonales.lista.gestorTareas.solucion'),
-      impact: t('proyectosPersonales.lista.gestorTareas.impacto'),
-      technologies: t('proyectosPersonales.lista.gestorTareas.tecnologias', { returnObjects: true }),
+      title: t('proyectosPersonales.lista.tennisPredictor.titulo'),
+      subtitle: t('proyectosPersonales.lista.tennisPredictor.subtitulo'),
+      description: t('proyectosPersonales.lista.tennisPredictor.descripcion'),
+      challenge: t('proyectosPersonales.lista.tennisPredictor.reto'),
+      solution: t('proyectosPersonales.lista.tennisPredictor.solucion'),
+      impact: t('proyectosPersonales.lista.tennisPredictor.impacto'),
+      technologies: t('proyectosPersonales.lista.tennisPredictor.tecnologias', { returnObjects: true }),
       links: {
-        github: "https://github.com/PepeGdlT/task-manager",
+        github: "https://github.com/PepeGdlT/TenisPredictorML",
         demo: null
       },
-      image: "/task-manager.jpg",
-      period: t('proyectosPersonales.lista.gestorTareas.periodo'),
-      estado: "completo"
-    },
-    {
-      title: t('proyectosPersonales.lista.elearning.titulo'),
-      subtitle: t('proyectosPersonales.lista.elearning.subtitulo'),
-      description: t('proyectosPersonales.lista.elearning.descripcion'),
-      challenge: t('proyectosPersonales.lista.elearning.reto'),
-      solution: t('proyectosPersonales.lista.elearning.solucion'),
-      impact: t('proyectosPersonales.lista.elearning.impacto'),
-      technologies: t('proyectosPersonales.lista.elearning.tecnologias', { returnObjects: true }),
-      links: {
-        github: "https://github.com/PepeGdlT/elearning-platform",
-        demo: null
-      },
-      image: "/elearning-platform.jpg",
-      period: t('proyectosPersonales.lista.elearning.periodo'),
-      estado: "enPausa"
+      image: "/project5.jpg",
+      period: t('proyectosPersonales.lista.tennisPredictor.periodo'),
+      estado: t('proyectosPersonales.lista.tennisPredictor.estado'),
+      grade: undefined
     }
   ];
 
@@ -289,48 +293,6 @@ export default function Portfolio() {
     }
   ];
 
-  const skills = {
-    frontend: [
-      { name: "React", level: 90, icon: "⚛️" },
-      { name: "TypeScript", level: 80, icon: "📟" },
-      { name: "Tailwind CSS", level: 85, icon: "🌊" },
-      { name: "HTML", level: 95, icon: "🏷️" },
-      { name: "CSS", level: 90, icon: "🎨" }
-    ],
-    backend: [
-      { name: "Node.js", level: 85, icon: "🟢" },
-      { name: "Python", level: 80, icon: "🐍" },
-      { name: "Java", level: 75, icon: "☕" },
-      { name: "Spring Boot", level: 70, icon: "🍃" },
-      { name: "REST APIs", level: 85, icon: "🔗" }
-    ],
-    database: [
-      { name: "MySQL", level: 70, icon: "🐬" },
-      { name: "SQLite", level: 85, icon: "📦" },
-      { name: "H2", level: 75, icon: "⚡" },
-      { name: "PostgreSQL", level: 75, icon: "🐘" }
-    ],
-    cloud: [
-      { name: "AWS", level: 70, icon: "☁️" },
-      { name: "Google Cloud", level: 75, icon: "🌐" },
-      { name: "Docker", level: 65, icon: "🐳" }
-    ],
-    tools: [
-      { name: "Git", level: 90, icon: "📋" },
-      { name: "Linux", level: 75, icon: "🐧" },
-      { name: "Docker", level: 65, icon: "🐳" },
-      { name: "Maven", level: 80, icon: "🏺" },
-      { name: "npm", level: 85, icon: "📦" },
-      { name: "JUnit", level: 75, icon: "🧪" }
-    ],
-    soft: [
-      { name: "Trabajo en Equipo", level: 90, icon: "🤝" },
-      { name: "Comunicación", level: 85, icon: "💬" },
-      { name: "Resolución de Problemas", level: 88, icon: "🧩" },
-      { name: "Aprendizaje Rápido", level: 92, icon: "🚀" },
-      { name: "Gestión de Tiempo", level: 80, icon: "⏰" }
-    ]
-  };
 
   const experiences = [
     {
@@ -344,7 +306,14 @@ export default function Portfolio() {
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      const headerOffset = 48; // h-12 en Tailwind = 48px
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - headerOffset,
+        behavior: 'smooth'
+      });
+    }
   };
 
   // Efecto para detectar la sección activa
@@ -426,10 +395,79 @@ export default function Portfolio() {
     setSending(false);
   };
 
+  // Obtener labels globales para proyectos
+  const globalProjectLabels = {
+    reto: t('proyectosPersonales.proyectosPersonalesLabels.reto'),
+    solucion: t('proyectosPersonales.proyectosPersonalesLabels.solucion'),
+    impacto: t('proyectosPersonales.proyectosPersonalesLabels.impacto'),
+    tecnologias: t('proyectosPersonales.proyectosPersonalesLabels.tecnologias'),
+  };
+
+  // Scroll automático entre secciones principales
+  useEffect(() => {
+    if (isLoading) return;
+    const sectionIds = [
+      'hero',
+      'sobre-mi',
+      'experiencia',
+      'proyectos',
+      'proyectos-personales',
+      'certificaciones',
+      'contacto'
+    ];
+    const shortSections = [
+      'hero',
+      'sobre-mi',
+      'experiencia',
+      'certificaciones',
+      'contacto'
+    ];
+    let isScrolling = false;
+    const handleWheel = (e: WheelEvent) => {
+      if (isScrolling) return;
+      // Detecta la sección actual
+      const scrollY = window.scrollY;
+      let currentIdx = 0;
+      let currentSectionEl: HTMLElement | null = null;
+      let currentSectionId = '';
+      for (let i = 0; i < sectionIds.length; i++) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el) {
+          const { offsetTop, offsetHeight } = el;
+          if (scrollY + 100 >= offsetTop && scrollY + 100 < offsetTop + offsetHeight) {
+            currentIdx = i;
+            currentSectionEl = el;
+            currentSectionId = sectionIds[i];
+            break;
+          }
+        }
+      }
+      // Solo scroll automático en secciones cortas
+      if (!shortSections.includes(currentSectionId)) {
+        return; // Permite scroll manual en secciones largas
+      }
+      const direction = e.deltaY > 0 ? 1 : -1;
+      let nextIdx = currentIdx + direction;
+      if (nextIdx < 0 || nextIdx >= sectionIds.length) return;
+      const nextEl = document.getElementById(sectionIds[nextIdx]);
+      if (nextEl) {
+        isScrolling = true;
+        nextEl.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => { isScrolling = false; }, 800);
+      }
+      e.preventDefault();
+    };
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+    };
+  }, [isLoading]);
+
   // @ts-ignore
     return (
     <>
       <SimpleLoading isLoading={isLoading} />
+      <ScrollAnimator />
       {!isLoading && (
         <>
           <NavigationMenu
@@ -452,21 +490,23 @@ export default function Portfolio() {
             {/* Contenido principal sin blur dinámico */}
             <div className="relative z-10">
               {/* Hero Section */}
-              <section id="hero" className="min-h-screen flex items-center justify-center px-4 relative">
-                <div className="max-w-5xl mx-auto text-center">
-                  <div className="space-y-12">
+              <section id="hero" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden bg-gradient-to-b from-black via-slate-900 to-black dark:from-[#020617] dark:via-[#0f172a] dark:to-black">
+                <div id="hero-inner" className="max-w-5xl mx-auto text-center relative z-10 will-change-transform">
+                  <div className="space-y-12" style={{ opacity: 1 }}>
                     {/* Nombre minimalista */}
-                    <div className="space-y-4">
-                      <h1 className="text-5xl md:text-7xl font-light tracking-tight text-white">
+                    <div className="space-y-4" data-hero-stagger>
+                      <h1 className="text-5xl md:text-7xl font-light tracking-tight text-white bg-clip-text" data-hero-stagger>
                         {t('nombre')}
                       </h1>
-                      <p className="text-xl md:text-2xl text-gray-400 font-light">
-                        {t('profesion')}
-                      </p>
+                      <AnimatedText
+                        text={t('profesion')}
+                        className="text-xl md:text-2xl text-gray-400 font-light inline-block"
+                        delay={0}
+                      />
                     </div>
 
                     {/* Propuesta de Valor Única - Realista */}
-                    <div className="max-w-3xl mx-auto">
+                    <div className="max-w-3xl mx-auto" data-hero-stagger>
                       <p
                         className="text-lg md:text-xl text-gray-300 leading-relaxed font-light"
                         dangerouslySetInnerHTML={{ __html: t('hero.valor') }}
@@ -474,7 +514,7 @@ export default function Portfolio() {
                     </div>
 
                     {/* Métricas Reales */}
-                    <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8">
+                    <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8" data-hero-stagger>
                       <div className="text-center">
                         <div className="text-3xl font-bold text-cyan-400">4º</div>
                         <div className="text-sm text-gray-400">{t('hero.metricas.curso')}</div>
@@ -484,32 +524,36 @@ export default function Portfolio() {
                         <div className="text-sm text-gray-400">{t('hero.metricas.mesesExperiencia')}</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-cyan-400">3</div>
+                        <div className="text-3xl font-bold text-cyan-400">5</div>
                         <div className="text-sm text-gray-400">{t('hero.metricas.proyectosDestacados')}</div>
                       </div>
                     </div>
 
                     {/* CTA Minimalista */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-12">
-                      <Button
-                        size="lg"
-                        onClick={() => scrollToSection('proyectos')}
-                        className="px-8 py-4 bg-white text-black hover:bg-gray-100 font-medium text-lg transition-all duration-300 transform hover:scale-105"
-                      >
-                        {t('hero.cta.verProyectos')}
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="lg"
-                        onClick={() => window.open('/CV-JoseGalvan.pdf', '_blank')}
-                        className="px-8 py-4 border border-gray-600 text-gray-900 hover:bg-gray-800 font-medium text-lg transition-all duration-300"
-                      >
-                        {t('hero.cta.descargarCV')}
-                      </Button>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-12" data-hero-stagger>
+                      <MagneticButton>
+                        <Button
+                          size="lg"
+                          onClick={() => scrollToSection('proyectos')}
+                          className="px-8 py-4 bg-white text-black hover:bg-gray-100 font-medium text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-cyan-500/30"
+                        >
+                          {t('hero.cta.verProyectos')}
+                        </Button>
+                      </MagneticButton>
+                      <MagneticButton>
+                        <Button
+                          variant="outline"
+                          size="lg"
+                          onClick={() => window.open(i18n.language === 'es' ? '/CV-JoseGalvan.pdf' : '/CV-JoseGalvan-en.pdf', '_blank')}
+                          className="px-8 py-4 border border-gray-600 text-gray-200 hover:bg-gray-800 font-medium text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-cyan-500/30"
+                        >
+                          {i18n.language === 'es' ? 'Descargar CV' : 'Download CV'}
+                        </Button>
+                      </MagneticButton>
                     </div>
 
                     {/* Iconos de redes sociales minimalistas */}
-                    <div className="flex justify-center space-x-8 pt-8">
+                    <div className="flex justify-center space-x-8 pt-8" data-hero-stagger>
                       <a
                         href="https://github.com/PepeGdlT"
                         target="_blank"
@@ -535,50 +579,51 @@ export default function Portfolio() {
                     </div>
                   </div>
                 </div>
+                <div className="absolute inset-0 opacity-[var(--hero-opacity,1)] pointer-events-none" aria-hidden="true" />
               </section>
 
               {/* Sobre Mí Section */}
-              <section id="sobre-mi" className="py-20 px-4 relative">
+              <section id="sobre-mi" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative">
                 <div className="max-w-4xl mx-auto">
                   <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                      {t('sobreMi.titulo')}
-                    </h2>
+                    <AnimatedHeading
+                      as="h2"
+                      text={t('sobreMi.titulo')}
+                      className="text-3xl md:text-4xl font-bold mb-4 text-white"
+                      variant="letters-up"
+                      delay={80}
+                    />
                   </div>
 
-                  <AnimatedCard className="bg-black/30 backdrop-blur-sm border border-purple-500/30">
-                    <div className="p-8">
-                      <div className="prose prose-lg max-w-none">
-                        <p className="text-lg leading-relaxed mb-6 text-purple-100">
-                          {t('sobreMi.descripcion1')}
-                        </p>
-                        <p className="text-lg leading-relaxed mb-6 text-purple-100">
-                          {t('sobreMi.descripcion2')}
-                        </p>
-                        <p className="text-lg leading-relaxed text-purple-100">
-                          {t('sobreMi.descripcion3')}
-                        </p>
-                      </div>
+                  <AnimatedCard className="bg-black/30 backdrop-blur-sm border border-purple-500/30" data-animate="fade-lux" data-animate-once="true">
+                    <div className="p-8 space-y-6">
+                      <p className="text-lg leading-relaxed text-purple-100" data-animate="fade-lux" data-animate-delay="50">{t('sobreMi.descripcion1')}</p>
+                      <p className="text-lg leading-relaxed text-purple-100" data-animate="fade-lux" data-animate-delay="120">{t('sobreMi.descripcion2')}</p>
+                      <p className="text-lg leading-relaxed text-purple-100" data-animate="fade-lux" data-animate-delay="190">{t('sobreMi.descripcion3')}</p>
                     </div>
                   </AnimatedCard>
                 </div>
               </section>
 
               {/* Experiencia Section */}
-              <section id="experiencia" className="py-20 px-4 relative">
+              <section id="experiencia" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative">
                 <div className="max-w-4xl mx-auto">
                   <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                      {t('experiencia.titulo')}
-                    </h2>
-                    <p className="text-lg text-green-200 max-w-2xl mx-auto bg-black/20 backdrop-blur-sm p-4 rounded-lg">
+                    <AnimatedHeading
+                      as="h2"
+                      text={t('experiencia.titulo')}
+                      className="text-3xl md:text-4xl font-bold mb-4 text-white"
+                      variant="letters-wipe"
+                      delay={60}
+                    />
+                    <p className="text-lg text-green-200 max-w-2xl mx-auto bg-black/20 backdrop-blur-sm p-4 rounded-lg" data-animate="fade-lux" data-animate-delay="180">
                       {t('experiencia.descripcion')}
                     </p>
                   </div>
 
                   <div className="space-y-8">
                     {experiences.filter(exp => exp.title.includes("Prácticas")).map((exp, index) => (
-                      <AnimatedCard key={index} className="bg-black/30 backdrop-blur-sm border border-green-500/30">
+                      <AnimatedCard key={index} data-animate="fade-up" data-animate-once="true" className="bg-black/30 backdrop-blur-sm border border-green-500/30">
                         <div className="p-6">
                           <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                             <div>
@@ -609,28 +654,34 @@ export default function Portfolio() {
               </section>
 
               {/* Proyectos Section */}
-              <section id="proyectos" className="py-20 px-4 relative">
+              <section id="proyectos" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative">
                 <div className="max-w-6xl mx-auto">
                   <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                      {t('proyectos.titulo')}
-                    </h2>
-                    <p className="text-lg text-blue-200 max-w-2xl mx-auto bg-black/20 backdrop-blur-sm p-4 rounded-lg">
+                    <AnimatedHeading
+                      as="h2"
+                      text={t('proyectos.titulo')}
+                      className="text-3xl md:text-4xl font-bold mb-4 text-white"
+                      variant="gradient-slide"
+                      delay={40}
+                    />
+                    <p className="text-lg text-blue-200 max-w-2xl mx-auto bg-black/20 backdrop-blur-sm p-4 rounded-lg" data-animate="fade-lux" data-animate-delay="160">
                       {t('proyectos.descripcion')}
                     </p>
                   </div>
 
-                  <div className="grid gap-8 md:gap-12">
+                  <div className="grid gap-8 md:gap-12" data-animate-stagger="120">
                     {projects.map((project, index) => (
-                      <AnimatedCard key={index} className="bg-black/30 backdrop-blur-sm border border-blue-500/30">
+                      <AnimatedCard key={index} data-animate="fade-up" data-animate-once="true" className="bg-black/30 backdrop-blur-sm border border-blue-500/30">
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-4">
                             <div className="aspect-video bg-black/50 rounded-lg overflow-hidden border border-blue-500/30 relative">
-                              <img
+                              <Image
                                 src={project.image}
                                 alt={project.title}
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                                loading="lazy"
+                                fill
+                                className="object-cover transition-transform duration-500 hover:scale-105"
+                                sizes="(max-width:768px) 100vw, 50vw"
+                                priority={index < 1}
                               />
                             </div>
                             <div className="flex items-center justify-between text-sm text-blue-200">
@@ -640,7 +691,7 @@ export default function Portfolio() {
                               </div>
                               <div className="flex items-center space-x-2">
                                 <Award className="h-4 w-4" />
-                                <span>Nota: {project.grade}</span>
+                                <span>{t('proyectosPersonales.nota')}: {project.grade}</span>
                               </div>
                             </div>
                           </div>
@@ -656,23 +707,21 @@ export default function Portfolio() {
 
                             <div className="space-y-3">
                               <div>
-                                <h4 className="font-semibold text-sm text-blue-300 mb-1">Reto</h4>
+                                <h4 className="font-semibold text-sm text-blue-300 mb-1">{globalProjectLabels.reto}</h4>
                                 <p className="text-sm text-blue-100">{project.challenge}</p>
                               </div>
-
                               <div>
-                                <h4 className="font-semibold text-sm text-blue-300 mb-1">Solución</h4>
+                                <h4 className="font-semibold text-sm text-blue-300 mb-1">{globalProjectLabels.solucion}</h4>
                                 <p className="text-sm text-blue-100">{project.solution}</p>
                               </div>
-
                               <div>
-                                <h4 className="font-semibold text-sm text-blue-300 mb-1">Impacto</h4>
+                                <h4 className="font-semibold text-sm text-blue-300 mb-1">{globalProjectLabels.impacto}</h4>
                                 <p className="text-sm text-blue-100">{project.impact}</p>
                               </div>
                             </div>
 
                             <div className="space-y-2">
-                              <h4 className="font-semibold text-sm text-blue-300">Tecnologías</h4>
+                              <h4 className="font-semibold text-sm text-blue-300">{globalProjectLabels.tecnologias}</h4>
                               <div className="flex flex-wrap gap-2">
                                 {Array.isArray(project.technologies) &&
                                   project.technologies.map((tech: any, idx: number) => (
@@ -690,7 +739,7 @@ export default function Portfolio() {
                                 className="flex items-center space-x-2 text-sm text-blue-300 hover:text-white transition-colors"
                               >
                                 <Github className="h-4 w-4" />
-                                <span>Código</span>
+                                <span>GitHub</span>
                               </a>
                               {project.links.demo && (
                                 <a
@@ -713,40 +762,45 @@ export default function Portfolio() {
               </section>
 
               {/* Proyectos Personales Section */}
-              <section id="proyectos-personales" className="py-20 px-4 relative">
+              <section id="proyectos-personales" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative">
                 <div className="max-w-6xl mx-auto">
                   <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                      {t('menu.proyectosPersonales')}
-                    </h2>
-                    <p className="text-lg text-purple-200 max-w-2xl mx-auto bg-black/20 backdrop-blur-sm p-4 rounded-lg">
+                    <AnimatedHeading
+                      as="h2"
+                      text={t('menu.proyectosPersonales')}
+                      className="text-3xl md:text-4xl font-bold mb-4 text-white"
+                      variant="letters-up"
+                      delay={40}
+                    />
+                    <p className="text-lg text-purple-200 max-w-2xl mx-auto bg-black/20 backdrop-blur-sm p-4 rounded-lg" data-animate="fade-lux" data-animate-delay="140">
                       {t('proyectosPersonales.intro')}
                     </p>
                   </div>
 
-                  <div className="grid gap-8 md:gap-12">
+                  <div className="grid gap-8 md:gap-12" data-animate-stagger="120">
                     {personalProjects.map((project, index) => {
-                      const estadoInfoRaw = t('proyectosPersonalesEstados.' + project.estado, { returnObjects: true });
+                      // Mapeo de color y label para los estados
                       let color = 'gray';
                       let label = project.estado;
-                      if (
-                        typeof estadoInfoRaw === 'object' && estadoInfoRaw !== null &&
-                        typeof (estadoInfoRaw as any).color === 'string' &&
-                        typeof (estadoInfoRaw as any).label === 'string'
-                      ) {
-                        color = (estadoInfoRaw as any).color;
-                        label = (estadoInfoRaw as any).label;
+                      if (project.estado === 'completo') {
+                        color = 'green';
+                        label = t('proyectosPersonalesEstados.completo', { defaultValue: 'Completado' });
+                      } else if (project.estado === 'enDesarrollo') {
+                        color = 'yellow';
+                        label = t('proyectosPersonalesEstados.enDesarrollo', { defaultValue: 'En desarrollo' });
                       }
                       return (
-                        <AnimatedCard key={index} className="bg-black/30 backdrop-blur-sm border border-purple-500/30">
+                        <AnimatedCard key={index} data-animate="fade-up" data-animate-once="true" className="bg-black/30 backdrop-blur-sm border border-purple-500/30">
                           <div className="grid md:grid-cols-2 gap-6">
                             <div className="space-y-4">
                               <div className="aspect-video bg-black/50 rounded-lg overflow-hidden border border-purple-500/30 relative">
-                                <img
+                                <Image
                                   src={project.image}
                                   alt={project.title}
-                                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                                  loading="lazy"
+                                  fill
+                                  className="object-cover transition-transform duration-500 hover:scale-105"
+                                  sizes="(max-width:768px) 100vw, 50vw"
+                                  priority={index < 1}
                                 />
                                 <div className="absolute top-2 right-2">
                                   <span className={`px-2 py-1 text-xs rounded-full bg-${color}-500/20 text-${color}-300 border border-${color}-500/30`}>
@@ -759,9 +813,15 @@ export default function Portfolio() {
                                   <Calendar className="h-4 w-4" />
                                   <span>{project.period}</span>
                                 </div>
+                                {/* Etiqueta de nota/grade si existe */}
+                                {project.grade && (
+                                  <div className="flex items-center space-x-2">
+                                    <Award className="h-4 w-4" />
+                                    <span>{t('proyectosPersonales.nota')}: {project.grade}</span>
+                                  </div>
+                                )}
                               </div>
                             </div>
-
                             <div className="space-y-4">
                               <div>
                                 <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
@@ -770,24 +830,24 @@ export default function Portfolio() {
 
                               <div className="space-y-3">
                                 <div>
-                                  <h4 className="font-semibold text-sm text-purple-300 mb-1">{t('proyectosPersonalesLabels.reto')}</h4>
+                                  <h4 className="font-semibold text-sm text-purple-300 mb-1">{t('proyectosPersonales.proyectosPersonalesLabels.reto')}</h4>
                                   <p className="text-sm text-purple-100">{project.challenge}</p>
                                 </div>
 
                                 <div>
-                                  <h4 className="font-semibold text-sm text-purple-300 mb-1">{t('proyectosPersonalesLabels.solucion')}</h4>
+                                  <h4 className="font-semibold text-sm text-purple-300 mb-1">{t('proyectosPersonales.proyectosPersonalesLabels.solucion')}</h4>
                                   <p className="text-sm text-purple-100">{project.solution}</p>
                                 </div>
 
                                 <div>
-                                  <h4 className="font-semibold text-sm text-purple-300 mb-1">{t('proyectosPersonalesLabels.impacto')}</h4>
+                                  <h4 className="font-semibold text-sm text-purple-300 mb-1">{t('proyectosPersonales.proyectosPersonalesLabels.impacto')}</h4>
                                   <p className="text-sm text-purple-100">{project.impact}</p>
                                 </div>
                               </div>
 
                               <div className="space-y-3">
                                 <div>
-                                  <h4 className="font-semibold text-sm text-purple-300 mb-2">{t('proyectosPersonalesLabels.tecnologias')}</h4>
+                                  <h4 className="font-semibold text-sm text-purple-300 mb-2">{t('proyectosPersonales.proyectosPersonalesLabels.tecnologias')}</h4>
                                   <div className="flex flex-wrap gap-2">
                                     {Array.isArray(project.technologies) &&
                                       project.technologies.map((tech: any, idx: number) => (
@@ -832,17 +892,21 @@ export default function Portfolio() {
               </section>
 
               {/* Certificaciones Section */}
-              <section id="certificaciones" className="py-20 px-4 relative">
+              <section id="certificaciones" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative">
                 <div className="max-w-4xl mx-auto">
                   <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                      {t('certificaciones.titulo')}
-                    </h2>
+                    <AnimatedHeading
+                      as="h2"
+                      text={t('certificaciones.titulo')}
+                      className="text-3xl md:text-4xl font-bold mb-4 text-white"
+                      variant="letters-wipe"
+                      delay={50}
+                    />
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     {certifications.map((cert, index) => (
-                      <AnimatedCard key={index} className="bg-black/30 backdrop-blur-sm border border-yellow-500/30">
+                      <AnimatedCard key={index} data-animate="fade-up" data-animate-once="true" className="bg-black/30 backdrop-blur-sm border border-yellow-500/30">
                         <div className="p-6">
                           <div className="flex items-start space-x-4">
                             <img src={cert.logo} alt={cert.name} className="w-12 h-12 object-contain" />
@@ -859,128 +923,20 @@ export default function Portfolio() {
                 </div>
               </section>
 
-              {/* Habilidades Section */}
-              <section id="habilidades" className="py-16 px-4 relative">
-                <div className="max-w-6xl mx-auto">
-                  <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                      {t('habilidades.titulo')}
-                    </h2>
-                    <p className="text-lg text-yellow-200 max-w-2xl mx-auto bg-black/20 backdrop-blur-sm p-4 rounded-lg">
-                      {t('habilidades.intro')}
-                    </p>
-                  </div>
 
-                  <div className="grid gap-6 md:gap-8">
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                      {/* Frontend */}
-                      <div className="bg-black/30 backdrop-blur-sm border border-yellow-500/30 rounded-lg p-4 hover:border-yellow-400/50 transition-all duration-300">
-                        <h3 className="text-lg font-semibold text-white mb-4 pb-2 border-b border-yellow-500/30 flex items-center">
-                          <span className="text-xl mr-2">🎨</span>
-                          {t('habilidades.frontend')}
-                        </h3>
-                        <div className="space-y-3 mt-4">
-                          {skills.frontend.map((skill, index) => (
-                            <div key={index} className="flex items-center space-x-2 text-yellow-100 p-2 rounded hover:bg-yellow-500/10 transition-colors">
-                              <TechIcon name={skill.name} className="w-5 h-5" />
-                              <span className="text-sm font-medium">{skill.name}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Backend */}
-                      <div className="bg-black/30 backdrop-blur-sm border border-green-500/30 rounded-lg p-4 hover:border-green-400/50 transition-all duration-300">
-                        <h3 className="text-lg font-semibold text-white mb-4 pb-2 border-b border-green-500/30 flex items-center">
-                          <span className="text-xl mr-2">⚙️</span>
-                          {t('habilidades.backend')}
-                        </h3>
-                        <div className="space-y-3 mt-4">
-                          {skills.backend.map((skill, index) => (
-                            <div key={index} className="flex items-center space-x-2 text-green-100 p-2 rounded hover:bg-green-500/10 transition-colors">
-                              <TechIcon name={skill.name} className="w-5 h-5" />
-                              <span className="text-sm font-medium">{skill.name}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Database */}
-                      <div className="bg-black/30 backdrop-blur-sm border border-blue-500/30 rounded-lg p-4 hover:border-blue-400/50 transition-all duration-300">
-                        <h3 className="text-lg font-semibold text-white mb-4 pb-2 border-b border-blue-500/30 flex items-center">
-                          <span className="text-xl mr-2">🗄️</span>
-                          {t('habilidades.database')}
-                        </h3>
-                        <div className="space-y-3 mt-4">
-                          {skills.database.map((skill, index) => (
-                            <div key={index} className="flex items-center space-x-2 text-blue-100 p-2 rounded hover:bg-blue-500/10 transition-colors">
-                              <TechIcon name={skill.name} className="w-5 h-5" />
-                              <span className="text-sm font-medium">{skill.name}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Cloud */}
-                      <div className="bg-black/30 backdrop-blur-sm border border-purple-500/30 rounded-lg p-4 hover:border-purple-400/50 transition-all duration-300">
-                        <h3 className="text-lg font-semibold text-white mb-4 pb-2 border-b border-purple-500/30 flex items-center">
-                          <span className="text-xl mr-2">☁️</span>
-                          {t('habilidades.cloud')}
-                        </h3>
-                        <div className="space-y-3 mt-4">
-                          {skills.cloud.map((skill, index) => (
-                            <div key={index} className="flex items-center space-x-2 text-purple-100 p-2 rounded hover:bg-purple-500/10 transition-colors">
-                              <TechIcon name={skill.name} className="w-5 h-5" />
-                              <span className="text-sm font-medium">{skill.name}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Tools */}
-                      <div className="bg-black/30 backdrop-blur-sm border border-red-500/30 rounded-lg p-4 hover:border-red-400/50 transition-all duration-300">
-                        <h3 className="text-lg font-semibold text-white mb-4 pb-2 border-b border-red-500/30 flex items-center">
-                          <span className="text-xl mr-2">🛠️</span>
-                          {t('habilidades.tools')}
-                        </h3>
-                        <div className="space-y-3 mt-4">
-                          {skills.tools.map((skill, index) => (
-                            <div key={index} className="flex items-center space-x-2 text-red-100 p-2 rounded hover:bg-red-500/10 transition-colors">
-                              <TechIcon name={skill.name} className="w-5 h-5" />
-                              <span className="text-sm font-medium">{skill.name}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Soft Skills */}
-                      <div className="bg-black/30 backdrop-blur-sm border border-cyan-500/30 rounded-lg p-4 hover:border-cyan-400/50 transition-all duration-300 md:col-span-2 lg:col-span-1">
-                        <h3 className="text-lg font-semibold text-white mb-4 pb-2 border-b border-cyan-500/30 flex items-center">
-                          <span className="text-xl mr-2">🌟</span>
-                          {t('habilidades.soft')}
-                        </h3>
-                        <div className="grid grid-cols-1 gap-3 mt-4">
-                          {skills.soft.map((skill, index) => (
-                            <div key={index} className="flex items-center space-x-2 text-cyan-100 p-2 rounded hover:bg-cyan-500/10 transition-colors">
-                              <span className="text-lg">{skill.icon}</span>
-                              <span className="text-sm font-medium">{skill.name}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
 
               {/* Contacto Section - con transición de fondo */}
-              <section id="contacto" className="py-20 px-4 relative bg-gradient-to-b from-transparent via-black/70 to-black">
+              <section id="contacto" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative bg-gradient-to-b from-transparent via-black/70 to-black">
                 <div className="max-w-4xl mx-auto">
                   <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-400 font-mono">
-                      $ ./contact.sh
-                    </h2>
-                    <p className="text-lg text-green-300 font-mono">
+                    <AnimatedHeading
+                      as="h2"
+                      text="$ ./contact.sh"
+                      className="text-3xl md:text-4xl font-bold mb-4 text-green-400 font-mono"
+                      variant="letters-up"
+                      delay={40}
+                    />
+                    <p className="text-lg text-green-300 font-mono" data-animate="fade-lux" data-animate-delay="160">
                       establishing secure connection...
                     </p>
                   </div>
@@ -1085,7 +1041,7 @@ export default function Portfolio() {
                   <div className="mt-8 text-center">
                     <AnimatedCard className="bg-black/30 backdrop-blur-sm border border-green-500/30 inline-block px-6 py-3">
                       <p className="text-green-300 text-sm font-mono">
-                        $ response_time: 24-48h | $ status: online
+                        {t('contacto.response_time')} | {t('contacto.status_online')}
                       </p>
                     </AnimatedCard>
                   </div>

@@ -4,9 +4,9 @@ export const setupSocket = (io: Server) => {
   io.on('connection', (socket) => {
     console.log('Client connected:', socket.id);
     
-    // Handle messages
+    // aquí manejo los mensajes que llegan
     socket.on('message', (msg: { text: string; senderId: string }) => {
-      // Echo: broadcast message only the client who send the message
+      // esto solo hace eco del mensaje al cliente que lo envió
       socket.emit('message', {
         text: `Echo: ${msg.text}`,
         senderId: 'system',
@@ -14,12 +14,12 @@ export const setupSocket = (io: Server) => {
       });
     });
 
-    // Handle disconnect
+    // aquí manejo cuando el cliente se desconecta
     socket.on('disconnect', () => {
       console.log('Client disconnected:', socket.id);
     });
 
-    // Send welcome message
+    // envío un mensaje de bienvenida cuando alguien se conecta
     socket.emit('message', {
       text: 'Welcome to WebSocket Echo Server!',
       senderId: 'system',

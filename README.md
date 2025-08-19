@@ -1,6 +1,6 @@
 # Portafolio de José Galván
 
-¡Bienvenido a mi portafolio personal! 🚀
+¡Bienvenido a mi portafolio personal! 
 
 Aquí encontrarás información sobre mi experiencia, proyectos, tecnologías que manejo y formas de contacto.
 

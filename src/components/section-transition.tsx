@@ -11,7 +11,8 @@ export default function SectionTransition({ activeSection, sections }: SectionTr
   const [previousSection, setPreviousSection] = useState<string>('');
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
   const [transitionProgress, setTransitionProgress] = useState<number>(0);
-  const animationRef = useRef<number>();
+  // @ts-ignore
+    const animationRef = useRef<number>();
   const lastUpdateRef = useRef<number>(0);
 
   useEffect(() => {

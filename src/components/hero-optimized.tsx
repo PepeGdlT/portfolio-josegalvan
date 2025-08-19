@@ -7,6 +7,7 @@ import AnimatedBackground from "./animated-background";
 import WaveEffect from "./wave-effect";
 import AnimatedText from "./animated-text";
 import dynamic from 'next/dynamic';
+import { useTranslation } from 'react-i18next';
 
 interface HeroOptimizedProps {
   onScrollToSection: (sectionId: string) => void;
@@ -18,6 +19,7 @@ function HeroOptimizedInner({ onScrollToSection }: HeroOptimizedProps) {
   const [showEffects, setShowEffects] = useState(false);
   const [particleStyles, setParticleStyles] = useState<Array<React.CSSProperties>>([]);
   const [waveStyles, setWaveStyles] = useState<Array<React.CSSProperties>>([]);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     // Mostrar el contenido principal inmediatamente
@@ -81,6 +83,22 @@ function HeroOptimizedInner({ onScrollToSection }: HeroOptimizedProps) {
             delay={300}
           />
           
+          {/* Botón de descarga de CV internacionalizado */}
+          <div className="flex justify-center gap-4 pt-4">
+            <a
+              href={i18n.language === 'es' ? '/CV-JoseGalvan.pdf' : '/CV-JoseGalvan-en.pdf'}
+              download
+              className="inline-block"
+            >
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white border-2 border-cyan-400/50 shadow-lg hover:shadow-cyan-500/25 transform hover:scale-105 transition-all duration-300 px-8 py-6"
+              >
+                {i18n.language === 'es' ? 'Descargar CV' : 'Download CV'}
+              </Button>
+            </a>
+          </div>
+
           <div className={`transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}>

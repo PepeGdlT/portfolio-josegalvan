@@ -5,21 +5,20 @@
     "experiencia": "Experiencia",
     "proyectos": "Proyectos Académicos",
     "proyectosPersonales": "Proyectos Personales",
-    "habilidades": "Habilidades",
     "certificaciones": "Certificaciones",
     "contacto": "Contacto"
   },
-  "cargar": "Loading...",
-  "frase1": "Compile your dreams, execute your goals.",
-  "frase2": "Code is poetry in motion.",
-  "frase3": "Every error is an opportunity to learn.",
-  "frase4": "Optimize your life like your software.",
-  "frase5": "Logic opens doors, passion crosses them.",
-  "frase6": "Debug your fears, program your success.",
-  "frase7": "In computer science, the limit is your imagination.",
-  "frase8": "Turn problems into algorithms.",
-  "frase9": "Update your knowledge every day.",
-  "frase10": "The best project is you.",
+  "cargar": "Cargando...",
+  "frase1": "Compila tus sueños, ejecuta tus metas.",
+  "frase2": "El código es poesía en movimiento.",
+  "frase3": "Cada error es una oportunidad para aprender.",
+  "frase4": "Optimiza tu vida como tu software.",
+  "frase5": "La lógica abre puertas, la pasión las cruza.",
+  "frase6": "Depura tus miedos, programa tu éxito.",
+  "frase7": "En informática, el límite es tu imaginación.",
+  "frase8": "Convierte problemas en algoritmos.",
+  "frase9": "Actualiza tu conocimiento cada día.",
+  "frase10": "El mejor proyecto eres tú.",
   "idioma": "Idioma",
   "espanol": "Español",
   "ingles": "Inglés",
@@ -78,7 +77,7 @@
         "reto": "Desarrollar una aplicación de chat robusta con funcionalidades avanzadas y persistencia de datos.",
         "solucion": "Implementé una aplicación completa utilizando Java y Maven, con JPA para persistencia, JUnit para pruebas y librerías externas para funcionalidades avanzadas.",
         "impacto": "Aplicación funcional con generación de reportes PDF para usuarios premium y manejo eficiente de dependencias.",
-        "tecnologias": ["Java", "Maven", "JPA", "EclipseLink", "H2", "JUnit", "iText", "JFreeChart"]
+        "tecnologias": ["Java", "Maven", "JPA", "EclipseLink", "H2", "JUnit", "iText"]
       },
       "mitologia": {
         "titulo": "Sistema Inteligente de Mitología Griega",
@@ -89,7 +88,7 @@
         "reto": "Crear un sistema que integre ontologías y motores de reglas para modelar dominios mitológicos complejos.",
         "solucion": "Desarrollamos un prototipo en equipo utilizando Protégé para ontologías y Drools como motor de reglas, capaz de evaluar secuencias de eventos mitológicos.",
         "impacto": "Sistema capaz de generar respuestas complejas sobre hazañas y decisiones mitológicas.",
-        "tecnologias": ["Protégé", "Drools", "Eclipse", "Ontologías", "Sistemas Inteligentes", "SWRL"]
+        "tecnologias": ["Protégé", "Drools", "Eclipse", "Ontologías", "Sistemas Inteligentes"]
       },
       "nanofiles": {
         "titulo": "NanoFiles - Sistema P2P",
@@ -100,66 +99,46 @@
         "reto": "Implementar un sistema híbrido que combine servidor centralizado con conexiones P2P directas para transferencia eficiente de archivos.",
         "solucion": "Desarrollamos un sistema en Java con servidor centralizado que gestiona usuarios y archivos, y conexiones P2P directas usando TCP para transferencias seguras.",
         "impacto": "Sistema completo con registro de usuarios, publicación/descarga de archivos y manejo concurrente de conexiones.",
-        "tecnologias": ["Java", "TCP", "UDP", "Sockets", "Concurrencia", "Protocolo fiable", "P2P"]
+        "tecnologias": ["Java", "TCP", "UDP", "Sockets", "Concurrencia", "P2P"]
       }
     }
   },
   "proyectosPersonales": {
-    "intro": "Una selección de mis proyectos personales más relevantes, donde demuestro habilidades en desarrollo web, backend y tecnologías cloud. Estos proyectos reflejan mi pasión por crear soluciones innovadoras y mi compromiso con el aprendizaje continuo.",
+    "intro": "Una selección de mis proyectos personales más relevantes, donde demuestro experiencia en desarrollo web, backend y tecnologías cloud. Estos proyectos reflejan mi pasión por crear soluciones innovadoras y mi compromiso con el aprendizaje continuo.",
     "lista": {
       "portfolio": {
         "titulo": "Portfolio Web Personal",
-        "subtitulo": "Sitio web personal para mostrar proyectos y habilidades",
-        "descripcion": "Desarrollo de mi portfolio web utilizando Next.js, TypeScript y Tailwind CSS. Incluye secciones de proyectos, habilidades, experiencia y formulario de contacto.",
+        "subtitulo": "Sitio web personal para mostrar proyectos",
+        "descripcion": "Desarrollo de mi portfolio web utilizando Next.js, TypeScript y Tailwind CSS. Incluye secciones de proyectos, experiencia y formulario de contacto.",
         "reto": "Crear una web moderna y responsiva para mostrar mi perfil profesional.",
         "solucion": "Utilicé Next.js, TypeScript y Tailwind para una experiencia rápida y personalizable.",
         "impacto": "Portfolio profesional online, mejorando mi presencia digital.",
         "tecnologias": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
         "periodo": "2025",
-        "estado": "enDesarrollo"
-      },
-      "gestorTareas": {
-        "titulo": "Gestor de Tareas",
-        "subtitulo": "Aplicación para organización de tareas personales",
-        "descripcion": "Aplicación web para gestionar tareas diarias con funcionalidades de creación, edición y eliminación de tareas. Incluye sistema de categorías y prioridades.",
-        "reto": "Facilitar la organización personal de tareas.",
-        "solucion": "Desarrollé una app con React y Node.js, integrando MongoDB para persistencia.",
-        "impacto": "Mejor gestión del tiempo y productividad personal.",
-        "tecnologias": ["React", "Node.js", "MongoDB", "Express"],
-        "periodo": "2024",
         "estado": "completo"
       },
-      "elearning": {
-        "titulo": "Plataforma E-Learning",
-        "subtitulo": "Sistema básico de cursos online",
-        "descripcion": "Plataforma educativa simple donde los usuarios pueden registrarse, ver cursos y completar lecciones. Incluye sistema de progreso y quizzes básicos.",
-        "reto": "Ofrecer una plataforma educativa accesible.",
-        "solucion": "Implementé Vue.js y Node.js para la web, con Socket.io para interacción en tiempo real.",
-        "impacto": "Facilita el aprendizaje online para usuarios sin experiencia previa.",
-        "tecnologias": ["Vue.js", "Node.js", "MongoDB", "Socket.io"],
-        "periodo": "2023-2024",
-        "estado": "enPausa"
+      "tennisPredictor": {
+        "titulo": "Tennis Match Predictor",
+        "subtitulo": "Predicción avanzada de partidos de tenis profesional",
+        "descripcion": "Predicción de partidos de tenis profesional con machine learning.",
+        "reto": "Crear un modelo preciso y analizar factores clave de victoria.",
+        "solucion": "Pipeline de datos, ingeniería de features y modelos avanzados.",
+        "impacto": "Predicción fiable y útil para análisis deportivo y apuestas.",
+        "tecnologias": ["Python", "pandas", "scikit-learn", "XGBoost", "matplotlib", "seaborn"],
+        "periodo": "2025",
+        "estado": "enDesarrollo"
       }
-    }
-  },
-  "proyectosPersonalesEstados": {
-    "completo": { "label": "Completo", "color": "green" },
-    "enDesarrollo": { "label": "En desarrollo", "color": "yellow" },
-    "enPausa": { "label": "En pausa", "color": "blue" },
-    "concepto": { "label": "Concepto", "color": "purple" }
+    },
+    "proyectosPersonalesLabels": {
+      "reto": "Reto",
+      "solucion": "Solución",
+      "impacto": "Impacto",
+      "tecnologias": "Tecnologías"
+    },
+    "nota": "Nota"
   },
   "certificaciones": {
     "titulo": "Certificaciones"
-  },
-  "habilidades": {
-    "titulo": "Habilidades Técnicas",
-    "intro": "Tecnologías y herramientas con las que trabajo",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "database": "Bases de Datos",
-    "cloud": "Cloud & DevOps",
-    "tools": "Herramientas",
-    "soft": "Soft Skills"
   },
   "contacto": {
     "terminal": "$ ./contact.sh",
@@ -177,15 +156,11 @@
     "mail": "[mail]",
     "git": "[git]",
     "linkedin": "[in]",
-    "respuesta": "$ response_time: 12-24h | $ status: online"
+    "respuesta": "$ response_time: 12-24h | $ status: online",
+    "response_time": "Tiempo de respuesta: 12-24h",
+    "status_online": "Estado: online"
   },
   "footer": {
     "derechos": "Todos los derechos reservados."
-  },
-  "proyectosPersonalesLabels": {
-    "reto": "Reto",
-    "solucion": "Solución",
-    "impacto": "Impacto",
-    "tecnologias": "Tecnologías"
   }
 }
