@@ -26,36 +26,36 @@ const customStyles = `
     from { transform: translate(-50%, -50%) rotate(0deg); }
     to { transform: translate(-50%, -50%) rotate(360deg); }
   }
-  
+
   @keyframes spin-medium {
     from { transform: translate(-50%, -50%) rotate(0deg); }
     to { transform: translate(-50%, -50%) rotate(360deg); }
   }
-  
+
   @keyframes spin-fast {
     from { transform: translate(-50%, -50%) rotate(0deg); }
     to { transform: translate(-50%, -50%) rotate(360deg); }
   }
-  
+
   @keyframes matrixFall {
     0% { transform: translateY(-100px); opacity: 0; }
     10% { opacity: 0.2; }
     90% { opacity: 0.2; }
     100% { transform: translateY(100vh); opacity: 0; }
   }
-  
+
   .animate-spin-slow {
     animation: spin-slow 20s linear infinite;
   }
-  
+
   .animate-spin-medium {
     animation: spin-medium 15s linear infinite;
   }
-  
+
   .animate-spin-fast {
     animation: spin-fast 10s linear infinite;
   }
-  
+
   .animate-matrix-fall {
     animation: matrixFall 3s linear infinite;
   }
@@ -341,7 +341,7 @@ export default function Portfolio() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
-      
+
       for (const section of sections) {
         const element = document.getElementById(section.id);
         if (element) {

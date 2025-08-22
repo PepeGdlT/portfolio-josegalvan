@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   // Exporta el sitio como estático para GitHub Pages
   output: 'export',
   assetPrefix: `/${repo}/`,
+  basePath: `/${repo}`,
   images: {
     unoptimized: true,
   },
