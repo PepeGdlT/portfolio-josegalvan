@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     description: "Portfolio profesional de desarrollador backend especializado en sistemas a gran escala e inteligencia artificial",
   },
   icons: {
-    icon: '/portfolio-josegalvan/favicon.ico',
-    shortcut: '/portfolio-josegalvan/favicon.ico',
-    apple: '/portfolio-josegalvan/favicon.ico',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 };
 

@@ -11,7 +11,7 @@
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:reset": "prisma migrate reset",
-    "export": "next build && next export"
+    "static": "node scripts/static-build.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
