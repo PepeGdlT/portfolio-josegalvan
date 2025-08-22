@@ -189,7 +189,9 @@ export default function Portfolio() {
       solution: t('proyectos.lista.mitologia.solucion'),
       impact: t('proyectos.lista.mitologia.impacto'),
       technologies: t('proyectos.lista.mitologia.tecnologias', { returnObjects: true }),
-      links: {
+        team: t('proyectos.lista.mitologia.equipo', { returnObjects: true }),
+
+        links: {
         github: "https://github.com/PepeGdlT/DSINT",
         demo: null
       },
@@ -205,11 +207,30 @@ export default function Portfolio() {
       solution: t('proyectos.lista.nanofiles.solucion'),
       impact: t('proyectos.lista.nanofiles.impacto'),
       technologies: t('proyectos.lista.nanofiles.tecnologias', { returnObjects: true }),
-      links: {
+        team: t('proyectos.lista.nanofiles.equipo', { returnObjects: true }),
+
+        links: {
         github: "https://github.com/PepeGdlT/ProyectoRC",
         demo: null
       },
       image: "/project3.jpg"
+    },
+    {
+      title: t('proyectos.lista.trilingo.titulo'),
+      subtitle: t('proyectos.lista.trilingo.subtitulo'),
+      institution: t('proyectos.lista.trilingo.institucion'),
+      period: t('proyectos.lista.trilingo.periodo'),
+      grade: t('proyectos.lista.trilingo.nota'),
+      challenge: t('proyectos.lista.trilingo.reto'),
+      solution: t('proyectos.lista.trilingo.solucion'),
+      impact: t('proyectos.lista.trilingo.impacto'),
+      technologies: t('proyectos.lista.trilingo.tecnologias', { returnObjects: true }),
+      team: t('proyectos.lista.trilingo.equipo', { returnObjects: true }),
+      links: {
+        github: "https://github.com/PepeGdlT/PDS-2025",
+        demo: null
+      },
+      image: "/project6.jpg"
     }
   ];
 
@@ -419,7 +440,6 @@ export default function Portfolio() {
       'hero',
       'sobre-mi',
       'experiencia',
-      'certificaciones',
       'contacto'
     ];
     let isScrolling = false;
@@ -568,7 +588,7 @@ export default function Portfolio() {
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-white transition-colors duration-300"
                       >
-                        <Linkedin className="h-6 w-6" />
+                        <Linkedin className="h-6 w-6 mb-[2px]" />
                       </a>
                       <a
                         href="mailto:pepegdlt02@gmail.com"
@@ -583,7 +603,7 @@ export default function Portfolio() {
               </section>
 
               {/* Sobre Mí Section */}
-              <section id="sobre-mi" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative">
+              <section id="sobre-mi" data-animate="fade-lux" data-animate-once="true" className="min-h-screen py-20 px-4 relative">
                 <div className="max-w-4xl mx-auto">
                   <div className="text-center mb-16">
                     <AnimatedHeading
@@ -606,7 +626,7 @@ export default function Portfolio() {
               </section>
 
               {/* Experiencia Section */}
-              <section id="experiencia" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative">
+              <section id="experiencia" data-animate="fade-lux" data-animate-once="true" className="min-h-screen py-20 px-4 relative">
                 <div className="max-w-4xl mx-auto">
                   <div className="text-center mb-16">
                     <AnimatedHeading
@@ -654,7 +674,7 @@ export default function Portfolio() {
               </section>
 
               {/* Proyectos Section */}
-              <section id="proyectos" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative">
+              <section id="proyectos" data-animate="fade-lux" data-animate-once="true" className="min-h-screen py-20 px-4 relative">
                 <div className="max-w-6xl mx-auto">
                   <div className="text-center mb-16">
                     <AnimatedHeading
@@ -694,6 +714,30 @@ export default function Portfolio() {
                                 <span>{t('proyectosPersonales.nota')}: {project.grade}</span>
                               </div>
                             </div>
+                            {/* Mostrar equipo debajo de la imagen y fecha/nota */}
+                            {Array.isArray(project.team) && project.team.length > 0 && (
+                              <div className="space-y-2">
+                                <h4 className="font-semibold text-sm text-blue-300">Equipo</h4>
+                                <ul className="list-disc list-inside ml-4">
+                                  {project.team.map((member: any, idx: number) => (
+                                    <li key={idx} className="text-blue-100 text-sm flex items-center gap-2">
+                                      {typeof member === 'string' ? member : member.label}
+                                      {member.linkedin && (
+                                        <a
+                                          href={member.linkedin}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="text-blue-400 hover:text-blue-600"
+                                          title="LinkedIn"
+                                        >
+                                          <Linkedin className="h-4 w-4 mb-[2px]" />
+                                        </a>
+                                      )}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
                           </div>
                           <div className="space-y-4">
                             <div>
@@ -731,6 +775,7 @@ export default function Portfolio() {
                               </div>
                             </div>
 
+
                             <div className="flex space-x-4">
                               <a
                                 href={project.links.github}
@@ -762,7 +807,7 @@ export default function Portfolio() {
               </section>
 
               {/* Proyectos Personales Section */}
-              <section id="proyectos-personales" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative">
+              <section id="proyectos-personales" data-animate="fade-lux" data-animate-once="true" className="min-h-screen py-20 px-4 relative">
                 <div className="max-w-6xl mx-auto">
                   <div className="text-center mb-16">
                     <AnimatedHeading
@@ -892,8 +937,8 @@ export default function Portfolio() {
               </section>
 
               {/* Certificaciones Section */}
-              <section id="certificaciones" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative">
-                <div className="max-w-4xl mx-auto">
+              <section id="certificaciones" data-animate="fade-lux" data-animate-once="true" className="min-h-screen py-10 px-4 relative flex items-center justify-center">
+                <div className="max-w-4xl mx-auto w-full">
                   <div className="text-center mb-16">
                     <AnimatedHeading
                       as="h2"
@@ -926,8 +971,8 @@ export default function Portfolio() {
 
 
               {/* Contacto Section - con transición de fondo */}
-              <section id="contacto" data-animate="fade-lux" data-animate-once="true" className="py-20 px-4 relative bg-gradient-to-b from-transparent via-black/70 to-black">
-                <div className="max-w-4xl mx-auto">
+              <section id="contacto" data-animate="fade-lux" data-animate-once="true" className="min-h-screen py-10 px-4 relative bg-gradient-to-b from-transparent via-black/70 to-black flex items-center justify-center">
+                <div className="max-w-4xl mx-auto w-full mt-16">
                   <div className="text-center mb-16">
                     <AnimatedHeading
                       as="h2"

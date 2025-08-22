@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
+const repo = 'portfolio-josegalvan';
 const nextConfig: NextConfig = {
   // Exporta el sitio como estático para GitHub Pages
   output: 'export',
+  assetPrefix: `/${repo}/`,
   images: {
     unoptimized: true,
   },

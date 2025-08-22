@@ -42,27 +42,26 @@
     }
   },
   "sobreMi": {
-    "titulo": "Sobre Mí",
-    "descripcion1": "Soy estudiante de Ingeniería Informática en la Universidad de Murcia, con una pasión profunda por el desarrollo backend a gran escala y la inteligencia artificial. Mi formación académica se complementa con experiencia práctica en proyectos reales y una constante búsqueda de conocimiento en las últimas tecnologías.",
-    "descripcion2": "Durante mi carrera, he tenido la oportunidad de trabajar en diversos proyectos que abarcan desde el desarrollo de software hasta sistemas inteligentes y redes de comunicaciones. Esta diversidad de experiencias me ha permitido adquirir una visión integral del campo de la informática.",
-    "descripcion3": "Actualmente, estoy enfocado en expandir mis conocimientos en cloud computing e inteligencia artificial, áreas que considero fundamentales para el futuro de la tecnología. Mi objetivo es contribuir al desarrollo de soluciones innovadoras que tengan un impacto positivo en la sociedad."
+    "titulo": "Sobre mí",
+    "descripcion1": "Soy estudiante de 4º de Ingeniería Informática en la Universidad de Murcia. Siempre me ha atraído entender cómo funcionan las cosas por dentro, y por eso terminé enganchado al desarrollo backend y a la inteligencia artificial.",
+    "descripcion2": "Aprendo probando, rompiendo y volviendo a montar. Me gusta trabajar en equipo, compartir ideas y buscar soluciones creativas a problemas reales. En mis prácticas descubrí lo que supone llevar un proyecto de principio a fin, desde el código hasta la documentación.",
+    "descripcion3": "He tenido la suerte de vivir un tiempo en Estados Unidos, lo que me ayudó a mejorar mucho mi inglés y a abrir la mente. Ahora busco seguir creciendo como programador, experimentar con distintas tecnologías y construir software que de verdad aporte valor."
   },
   "experiencia": {
     "titulo": "Experiencia Profesional",
-    "descripcion": "Mi experiencia más relevante en el campo del desarrollo de software",
+    "descripcion": "Mi experiencia más relevante en el ámbito del desarrollo de software.",
     "practicas": {
       "titulo": "Prácticas en Desarrollo e Integración de Software",
       "empresa": "OdinS",
       "periodo": "Ene 2025 – Jul 2025",
-      "descripcion": "Desarrollo e integración de módulo de pago para PrestaShop usando GNU Taler. Configuración de backend merchant, base de datos y endpoints REST. Implementación de pruebas de flujo completo y documentación técnica.",
+      "descripcion": "Participé en la investigación y desarrollo de un módulo de pago para PrestaShop utilizando GNU Taler. Me encargué de configurar el backend merchant y la base de datos, así como de integrar el plugin mediante endpoints REST. También realicé pruebas completas de pago y reembolso, y preparé documentación técnica con material de apoyo como un vídeo explicativo y un repositorio en GitLab.",
       "logros": "Logros:",
       "achievements": [
-        "Implementación completa de sistema de pago",
-        "Documentación técnica y video explicativo",
-        "Gestión de repositorio GitLab"
+        "Implementación de un sistema de pago funcional para PrestaShop",
+        "Diseño de documentación técnica y material audiovisual",
+        "Entrega de un flujo de pago completo, probado y validado en escenarios reales"
       ]
-    },
-    "logros": "Logros:"
+    }
   },
   "proyectos": {
     "titulo": "Proyectos Académicos",
@@ -88,7 +87,11 @@
         "reto": "Crear un sistema que integre ontologías y motores de reglas para modelar dominios mitológicos complejos.",
         "solucion": "Desarrollamos un prototipo en equipo utilizando Protégé para ontologías y Drools como motor de reglas, capaz de evaluar secuencias de eventos mitológicos.",
         "impacto": "Sistema capaz de generar respuestas complejas sobre hazañas y decisiones mitológicas.",
-        "tecnologias": ["Protégé", "Drools", "Eclipse", "Ontologías", "Sistemas Inteligentes"]
+        "tecnologias": ["Protégé", "Drools", "Eclipse", "Ontologías", "Sistemas Inteligentes"],
+        "equipo": [
+          { "label": "Eduardo Meca Valles" },
+          { "label": "Juan Antonio Mendoza Perez", "linkedin": "https://www.linkedin.com/in/juan-antonio-mendoza-perez-1a8b95359/" }
+        ]
       },
       "nanofiles": {
         "titulo": "NanoFiles - Sistema P2P",
@@ -99,7 +102,25 @@
         "reto": "Implementar un sistema híbrido que combine servidor centralizado con conexiones P2P directas para transferencia eficiente de archivos.",
         "solucion": "Desarrollamos un sistema en Java con servidor centralizado que gestiona usuarios y archivos, y conexiones P2P directas usando TCP para transferencias seguras.",
         "impacto": "Sistema completo con registro de usuarios, publicación/descarga de archivos y manejo concurrente de conexiones.",
-        "tecnologias": ["Java", "TCP", "UDP", "Sockets", "Concurrencia", "P2P"]
+        "tecnologias": ["Java", "TCP", "UDP", "Sockets", "Concurrencia", "P2P"],
+        "equipo": [
+          "Eduardo Meca Valles"
+        ]
+      },
+      "trilingo": {
+        "titulo": "Trilingo - Plataforma de Aprendizaje Interactivo",
+        "subtitulo": "Aplicación de escritorio para crear y realizar cursos interactivos.",
+        "institucion": "Universidad de Murcia",
+        "periodo": "Feb 2025 – Jun 2025",
+        "nota": "9.0",
+        "reto": "Desarrollar una plataforma que permita crear, gestionar y realizar cursos con ejercicios variados, guardando el progreso y estadísticas del usuario.",
+        "solucion": "Implementación en Java 21 y JavaFX, arquitectura MVVM con mvvmFX, persistencia con JPA y SQLite, soporte para importación/exportación de cursos en JSON y funcionalidad extra de creación de cursos desde la interfaz gráfica.",
+        "impacto": "Facilita el aprendizaje personalizado y colaborativo, permitiendo a los usuarios crear y compartir cursos, y consultar estadísticas de progreso.",
+        "tecnologias": ["Java 21", "JavaFX", "mvvmFX", "JPA", "SQLite", "Jackson"],
+        "equipo": [
+          "Sergio Maiquez Noguera",
+          "Pablo Sánchez Albaladejo"
+        ]
       }
     }
   },

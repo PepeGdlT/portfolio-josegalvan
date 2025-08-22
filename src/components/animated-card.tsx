@@ -6,9 +6,10 @@ import { Card, CardContent } from "@/components/ui/card";
 interface AnimatedCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
+  team?: string[];
 }
 
-export default function AnimatedCard({ children, className = "", ...rest }: AnimatedCardProps) {
+export default function AnimatedCard({ children, className = "", team, ...rest }: AnimatedCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const handleMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
     const el = e.currentTarget;
@@ -44,6 +45,19 @@ export default function AnimatedCard({ children, className = "", ...rest }: Anim
       }`} />
       <CardContent className="relative z-10 p-6">
         {children}
+        {/* Sección visual para el equipo si existe */}
+        {team && Array.isArray(team) && team.length > 0 && (
+          <div className="mt-6 p-4 bg-blue-950/60 rounded-lg border border-blue-500/30">
+            <h4 className="font-semibold text-base text-blue-300 mb-2 flex items-center gap-2">
+              Equipo
+            </h4>
+            <ul className="list-disc list-inside ml-4 text-blue-100 text-sm">
+              {team.map((member: string, idx: number) => (
+                <li key={idx}>{member}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </CardContent>
     </Card>
   );

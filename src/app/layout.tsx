@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     title: "José Galván de la Torre | Backend Developer & AI Engineer",
     description: "Portfolio profesional de desarrollador backend especializado en sistemas a gran escala e inteligencia artificial",
   },
+  icons: {
+    icon: '/portfolio-josegalvan/favicon.ico',
+    shortcut: '/portfolio-josegalvan/favicon.ico',
+    apple: '/portfolio-josegalvan/favicon.ico',
+  },
 };
 
 export default function RootLayout({
