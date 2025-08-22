@@ -43,26 +43,26 @@
   },
   "sobreMi": {
     "titulo": "About Me",
-    "descripcion1": "I am a Computer Engineering student at the University of Murcia, deeply passionate about large-scale backend development and artificial intelligence. My academic training is complemented by practical experience in real projects and a constant search for knowledge in the latest technologies.",
-    "descripcion2": "During my career, I have had the opportunity to work on various projects ranging from software development to intelligent systems and communication networks. This diversity of experiences has allowed me to acquire a comprehensive view of the field of computer science.",
-    "descripcion3": "Currently, I am focused on expanding my knowledge in cloud computing and artificial intelligence, areas I consider fundamental for the future of technology. My goal is to contribute to the development of innovative solutions that have a positive impact on society."
-  },
+    "descripcion1": "I'm a 4th-year Computer Engineering student at the University of Murcia. I've always been curious about how things work under the hood, which led me to dive into backend development and artificial intelligence.",
+    "descripcion2": "I learn by doing—testing, breaking, and rebuilding. I enjoy working in teams, sharing ideas, and finding creative ways to solve real-world problems. During my internship I got hands-on experience with taking a project from start to finish, from coding to documentation.",
+    "descripcion3": "I had the chance to live in the United States, which helped me improve my English and broaden my perspective. Looking ahead, I want to keep growing as a developer, explore new technologies, and build software that truly makes an impact. I'm also open to opportunities abroad and excited about working in international environments."
+  }
+,
   "experiencia": {
     "titulo": "Professional Experience",
-    "descripcion": "My most relevant experience in software development",
+    "descripcion": "My most relevant experience in the field of software development.",
     "practicas": {
-      "titulo": "Internship in Software Development and Integration",
+      "titulo": "Software Development and Integration Internship",
       "empresa": "OdinS",
       "periodo": "Jan 2025 – Jul 2025",
-      "descripcion": "Development and integration of payment module for PrestaShop using GNU Taler. Backend merchant setup, database and REST endpoints configuration. Full flow testing and technical documentation.",
+      "descripcion": "I worked on the research and development of a payment module for PrestaShop using GNU Taler. My tasks included configuring the merchant backend and database, integrating the plugin through REST endpoints, running end-to-end payment and refund tests, and preparing technical documentation supported by a video tutorial and a GitLab repository.",
       "logros": "Achievements:",
       "achievements": [
-        "Full payment system implementation",
-        "Technical documentation and explanatory video",
-        "GitLab repository management"
+        "Implemented a fully functional payment system for PrestaShop",
+        "Produced technical documentation and a video tutorial",
+        "Delivered a complete payment workflow tested and validated in real scenarios"
       ]
-    },
-    "logros": "Achievements:"
+    }
   },
   "proyectos": {
     "titulo": "Academic Projects",
@@ -100,6 +100,22 @@
         "solucion": "We developed a Java system with a centralized server managing users and files, and direct P2P connections using TCP for secure transfers.",
         "impacto": "Grade 10. Complete system with user registration, file publishing/downloading, and concurrent connection handling.",
         "tecnologias": ["Java", "TCP", "UDP", "Sockets", "Concurrency", "Reliable Protocol", "P2P"]
+      },
+      "trilingo": {
+        "titulo": "Trilingo - Interactive Learning Platform",
+        "subtitulo": "Desktop application to create and complete interactive courses.",
+        "institucion": "University of Murcia",
+        "periodo": "Feb 2025 – Jun 2025",
+        "nota": "9.0",
+        "reto": "Develop a platform to create, manage, and complete courses with varied exercises, saving user progress and statistics.",
+        "solucion": "Implemented in Java 21 and JavaFX, MVVM architecture with mvvmFX, persistence with JPA and SQLite, support for importing/exporting courses in JSON, and course creation via GUI.",
+        "impacto": "Enables personalized and collaborative learning, allowing users to create and share courses, and consult progress statistics.",
+        "tecnologias": ["Java 21", "JavaFX", "mvvmFX", "JPA", "SQLite", "Jackson"],
+        "equipo": [
+          "JOSÉ GALVÁN DE LA TORRE",
+          "SERGIO MAIQUEZ NOGUERA",
+          "PABLO SÁNCHEZ ALBALADEJO"
+        ]
       }
     }
   },

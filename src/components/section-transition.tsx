@@ -31,7 +31,7 @@ export default function SectionTransition({ activeSection, sections }: SectionTr
         const progress = Math.min(elapsed / duration, 1);
         
         // Usar easing function más suave
-        const easeProgress = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        const easeProgress = 1 - Math.pow(1 - progress, 3); // ease-docs cubic
         
         setTransitionProgress(easeProgress);
         
