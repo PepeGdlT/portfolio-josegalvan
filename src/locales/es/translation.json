@@ -179,7 +179,25 @@
     "linkedin": "[in]",
     "respuesta": "$ response_time: 12-24h | $ status: online",
     "response_time": "Tiempo de respuesta: 12-24h",
-    "status_online": "Estado: online"
+    "status_online": "Estado: online",
+    "toast": {
+      "camposIncompletos": {
+        "titulo": "Campos incompletos",
+        "descripcion": "Por favor rellena nombre, email y mensaje."
+      },
+      "mensajeEnviado": {
+        "titulo": "Mensaje enviado",
+        "descripcion": "Tu mensaje se ha enviado correctamente. Te responderé pronto."
+      },
+      "errorEnvio": {
+        "titulo": "Error al enviar",
+        "descripcion": "No se pudo enviar el mensaje. Inténtalo de nuevo."
+      },
+      "errorRed": {
+        "titulo": "Error de red",
+        "descripcion": "No hay conexión. Revisa tu red e inténtalo otra vez."
+      }
+    }
   },
   "footer": {
     "derechos": "Todos los derechos reservados."
