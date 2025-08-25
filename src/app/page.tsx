@@ -16,7 +16,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from 'react-i18next';
 import ScrollAnimator from "@/components/scroll-animator";
 import Image from 'next/image';
-import MagneticButton from '@/components/magnetic-button';
+import MagneticButton from "../components/magnetic-button";
 import AnimatedHeading from '@/components/animated-heading';
 import AnimatedText from '@/components/animated-text';
 
@@ -777,25 +777,29 @@ export default function Portfolio() {
 
 
                             <div className="flex space-x-4">
-                              <a
-                                href={project.links.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center space-x-2 text-sm text-blue-300 hover:text-white transition-colors"
-                              >
-                                <Github className="h-4 w-4" />
-                                <span>GitHub</span>
-                              </a>
-                              {project.links.demo && (
+                              <MagneticButton className="bg-blue-900/40 hover:bg-blue-900/70 p-2 rounded-lg">
                                 <a
-                                  href={project.links.demo}
+                                  href={project.links.github}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="flex items-center space-x-2 text-sm text-blue-300 hover:text-white transition-colors"
                                 >
-                                  <ExternalLink className="h-4 w-4" />
-                                  <span>Demo</span>
+                                  <Github className="h-4 w-4" />
+                                  <span>GitHub</span>
                                 </a>
+                              </MagneticButton>
+                              {project.links.demo && (
+                                <MagneticButton className="bg-blue-900/40 hover:bg-blue-900/70 p-2 rounded-lg">
+                                  <a
+                                    href={project.links.demo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center space-x-2 text-sm text-blue-300 hover:text-white transition-colors"
+                                  >
+                                    <ExternalLink className="h-4 w-4" />
+                                    <span>Demo</span>
+                                  </a>
+                                </MagneticButton>
                               )}
                             </div>
                           </div>
@@ -904,26 +908,30 @@ export default function Portfolio() {
 
                                 <div className="flex space-x-4 pt-2">
                                   {project.links.github && (
-                                    <a
-                                      href={project.links.github}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="text-purple-300 hover:text-purple-100 transition-colors flex items-center space-x-1"
-                                    >
-                                      <Github className="h-4 w-4" />
-                                      <span className="text-sm">GitHub</span>
-                                    </a>
+                                    <MagneticButton className="bg-purple-900/40 hover:bg-purple-900/70 p-2 rounded-lg">
+                                      <a
+                                        href={project.links.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-purple-300 hover:text-purple-100 transition-colors flex items-center space-x-1"
+                                      >
+                                        <Github className="h-4 w-4" />
+                                        <span className="text-sm">GitHub</span>
+                                      </a>
+                                    </MagneticButton>
                                   )}
                                   {project.links.demo && (
-                                    <a
-                                      href={project.links.demo}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="text-purple-300 hover:text-purple-100 transition-colors flex items-center space-x-1"
-                                    >
-                                      <ExternalLink className="h-4 w-4" />
-                                      <span className="text-sm">Demo</span>
-                                    </a>
+                                    <MagneticButton className="bg-purple-900/40 hover:bg-purple-900/70 p-2 rounded-lg">
+                                      <a
+                                        href={project.links.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-purple-300 hover:text-purple-100 transition-colors flex items-center space-x-1"
+                                      >
+                                        <ExternalLink className="h-4 w-4" />
+                                        <span className="text-sm">Demo</span>
+                                      </a>
+                                    </MagneticButton>
                                   )}
                                 </div>
                               </div>
