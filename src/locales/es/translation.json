@@ -125,7 +125,7 @@
     }
   },
   "proyectosPersonales": {
-    "intro": "Una selección de mis proyectos personales más relevantes, donde demuestro experiencia en desarrollo web, backend y tecnologías cloud. Estos proyectos reflejan mi pasión por crear soluciones innovadoras y mi compromiso con el aprendizaje continuo.",
+    "intro": "Proyectos personales orientados al desarrollo web, analisis de datos y ML. Cada uno de ellos sirve como ejemplo práctico de la aplicación de distintas tecnologías y buenas prácticas en entornos reales.",
     "lista": {
       "portfolio": {
         "titulo": "Portfolio Web Personal",

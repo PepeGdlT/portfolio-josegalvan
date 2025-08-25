@@ -120,7 +120,7 @@
     }
   },
   "proyectosPersonales": {
-    "intro": "A selection of my most relevant personal projects, showcasing my experience in web development, backend, and cloud technologies. These projects reflect my passion for creating innovative solutions and my commitment to continuous learning.",
+    "intro": "Personal projects focused on web development, data analysis, and machine learning. Each one serves as a practical example of applying different technologies and best practices in real-world scenarios.",
     "lista": {
       "portfolio": {
         "titulo": "Personal Portfolio Website",
