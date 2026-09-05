@@ -1,17 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  output: "export",
   images: { unoptimized: true },
-  typescript: { ignoreBuildErrors: true },
-  reactStrictMode: false,
-  webpack: (config, { dev }) => {
-    if (dev) {
-      config.watchOptions = { ignored: ['**/*'] };
-    }
-    return config;
-  },
-  eslint: { ignoreDuringBuilds: true },
+  reactStrictMode: true,
 };
 
 export default nextConfig;
