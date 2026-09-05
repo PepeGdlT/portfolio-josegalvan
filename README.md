@@ -1,27 +1,37 @@
-# Portafolio de José Galván
+# José Galván — Portfolio
 
-¡Bienvenido a mi portafolio personal! 
+Personal portfolio for José Galván, presenting software engineering, applied machine learning and published research.
 
-Aquí encontrarás información sobre mi experiencia, proyectos, tecnologías que manejo y formas de contacto.
+## Stack
 
-## Tecnologías principales
-- React / Next.js
-- TypeScript
-- Tailwind CSS
-- Prisma
-- shadcn/ui
+- Next.js 15 with static export
+- React 19 and TypeScript
+- Tailwind CSS 4 plus a small site-specific design layer
+- i18next for English and Spanish content
 
-## Proyectos destacados
-- Aplicaciones web modernas
-- Integraciones con bases de datos
-- Interfaces interactivas y responsivas
+## Local development
 
-## Sobre mí
-Apasionado por el desarrollo web, la tecnología y el aprendizaje continuo. Siempre buscando nuevos retos y oportunidades para crecer profesionalmente.
+```bash
+npm ci
+npm run dev
+```
 
-## Contacto
-Puedes contactarme a través de LinkedIn, correo electrónico o descargando mi CV desde la sección correspondiente.
+Open `http://localhost:3000`.
 
----
+## Quality checks
 
-¡Explora el sitio y descubre más sobre mi trabajo!
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
+
+## Static deployment
+
+The site is configured with `output: "export"`. `npm run static` builds the application and mirrors the exported `out/` directory into `docs/` for the existing GitHub Pages deployment.
+
+The main content is maintained in `src/data/portfolio.ts`. The ATP Tennis Predictor case study uses the recorded artifacts from the companion `TenisPredictorML` repository as its factual source.
+
+Content provenance and verification limits are documented in [CONTENT-SOURCES.md](CONTENT-SOURCES.md). The visual layer lives in `src/app/portfolio.css`; local logos and their license are in `public/brands/`.
+
+`scripts/check-portfolio.mjs` checks the production export in Chrome at five widths in both languages, including overflow, image loading, navigation, persisted language and the case study. It requires Playwright (optionally located via `PLAYWRIGHT_MODULE`) and an installed Chrome browser. Screenshots are written to the ignored `local-qa/` folder.

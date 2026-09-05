@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">José Galván — Software Engineering, AI and Machine Learning</title>
+  <desc id="description">Portfolio preview with a dark technical grid and three profile areas.</desc>
+  <rect width="1200" height="630" fill="#07111f"/>
+  <g stroke="#1b3447" stroke-width="1" opacity=".65">
+    <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200"/>
+    <path d="M90 0v630M180 0v630M270 0v630M360 0v630M450 0v630M540 0v630M630 0v630M720 0v630M810 0v630M900 0v630M990 0v630M1080 0v630"/>
+  </g>
+  <rect x="70" y="66" width="52" height="52" rx="26" fill="none" stroke="#49d7c3"/>
+  <text x="96" y="99" fill="#49d7c3" font-family="Consolas, monospace" font-size="15" text-anchor="middle">JG</text>
+  <text x="70" y="205" fill="#edf5fb" font-family="Segoe UI, sans-serif" font-size="72" font-weight="650" letter-spacing="-3">José Galván</text>
+  <text x="70" y="270" fill="#a4b4c1" font-family="Segoe UI, sans-serif" font-size="30">Software engineering around data and intelligent systems.</text>
+  <g font-family="Consolas, monospace" font-size="17">
+    <rect x="70" y="360" width="320" height="82" fill="#0b1827" stroke="#294659"/>
+    <text x="94" y="393" fill="#49d7c3">01</text><text x="94" y="421" fill="#edf5fb">SOFTWARE ENGINEERING</text>
+    <rect x="410" y="360" width="320" height="82" fill="#0b1827" stroke="#294659"/>
+    <text x="434" y="393" fill="#49d7c3">02</text><text x="434" y="421" fill="#edf5fb">ARTIFICIAL INTELLIGENCE / ML</text>
+    <rect x="750" y="360" width="320" height="82" fill="#0b1827" stroke="#294659"/>
+    <text x="774" y="393" fill="#edb46c">03</text><text x="774" y="421" fill="#edf5fb">PUBLISHED RESEARCH</text>
+  </g>
+  <circle cx="72" cy="555" r="5" fill="#49d7c3"/>
+  <text x="91" y="563" fill="#a4b4c1" font-family="Consolas, monospace" font-size="17">josegalvan.dev</text>
+</svg>
